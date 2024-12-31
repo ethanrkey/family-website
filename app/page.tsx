@@ -5,7 +5,7 @@ export default function Home() {
     <div className="bg-gray-800 text-white min-h-screen">
       {/* Hero Section */}
       <header className="flex flex-col items-center justify-center h-screen text-center">
-        <h1 className="text-5xl font-bold">Key Family</h1>
+        <h1 className="text-5xl font-heading">Key Family</h1>
         <p className="text-xl mt-4">Dedicated. Resilient. Determined.</p>
       </header>
 
