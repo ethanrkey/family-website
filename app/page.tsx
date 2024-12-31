@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 
@@ -32,8 +33,10 @@ export default function Home() {
           </p>
         </div>
         <div className="flex items-center space-x-4">
-            <Avatar alt="Ethan Key" src="/me.jpg" sx={{ width: 150, height: 150 }}/>
-            <h2 className="text-2xl font-semibold">Ethan Key</h2>
+          <Link href="/ethankey">
+              <Avatar alt="Ethan Key" src="/me.jpg" sx={{ width: 150, height: 150 }}/>
+          </Link>
+          <h2 className="text-2xl font-semibold">Ethan Key</h2>
         </div>
       </section>
 
