@@ -1,120 +1,150 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import Experience from "@/components/experience";
+import Education from "@/components/education";
+import Projects from "@/components/projects";
+import Skills from "@/components/skills";
+import About from "@/components/about";
+import { MdLocalPhone } from "react-icons/md";
+import { MdEmail } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa";
+
 
 export default function EthanKey() {
+  const [activeSection, setActiveSection] = useState("");
+
+  const renderContent = () => {
+    switch (activeSection) {
+      case "Experience":
+        return <Experience />;
+      case "Education":
+        return <Education />;
+      case "Projects":
+        return <Projects />;
+      case "Skills":
+        return <Skills />;
+      default:
+        return <About />;
+    }
+  };
+
   return (
-    <div className="bg-[#4B4B4B] text-white min-h-screen">
-      <header className="flex flex-col items-center justify-center h-48">
+    <div className="bg-[#4B4B4B] flex flex-col min-h-screen">
+      <header className="flex flex-col items-center justify-center h-48 border border-red-500">
         <Link href="/">
           <h1 className="text-4xl font-bold">Ethan Key</h1>
         </Link>
-        <p className="text-lg">Software Engineer | Boston University</p>
       </header>
-      <main className="px-8 py-16">
-        <section>
-        <Stack spacing={3} direction="column">
-          <Button
-            variant="contained"
+      <div className="flex flex-1">
+        <div className="flex justify-center w-1/5 py-16 border border-red-500">
+          <Stack spacing={3} direction="column">
+            <Button
+              onClick={() => setActiveSection("Experience")}
+              variant="contained"
+              sx={{
+                height: "60px", 
+                width: '150px',
+                fontFamily: "inherit",
+                textTransform: "none",
+                backgroundColor: activeSection === "Experience" ? "#B36D6D" : "#D9D9D9",
+                color: "white",
+                padding: '10px 20px',
+                borderRadius: '10px',
+                '&:hover': {
+                  backgroundColor: '#B36D6D',
+                },
+              }}
+            >
+              Experience
+            </Button>
+            <Button
+              onClick={() => setActiveSection("Education")}
+              variant="contained"
+              sx={{
+                height: "60px", 
+                width: '150px',
+                fontFamily: "inherit",
+                textTransform: "none",
+                backgroundColor: activeSection === "Education" ? "#B36D6D" : "#D9D9D9",
+                color: 'white',
+                padding: '10px 20px',
+                borderRadius: '10px',
+                '&:hover': {
+                  backgroundColor: '#B36D6D',
+                },
+              }}
+            >
+              Education
+            </Button>
+            <Button
+              onClick={() => setActiveSection("Projects")}
+              variant="contained"
+              sx={{
+                height: "60px", 
+                width: '150px',
+                fontFamily: "inherit",
+                textTransform: "none",
+                backgroundColor: activeSection === "Projects" ? "#B36D6D" : "#D9D9D9",
+                color: 'white',
+                padding: '10px 20px',
+                borderRadius: '10px',
+                '&:hover': {
+                  backgroundColor: '#B36D6D',
+                },
+              }}
+            >
+              Projects
+            </Button>
+            <Button
+              onClick={() => setActiveSection("Skills")}
+              variant="contained"
+              sx={{
+                height: "60px", 
+                width: '150px',
+                fontFamily: "inherit",
+                textTransform: "none",
+                backgroundColor: activeSection === "Skills" ? "#B36D6D" : "#D9D9D9",
+                color: 'white',
+                padding: '10px 20px',
+                borderRadius: '10px',
+                '&:hover': {
+                  backgroundColor: '#B36D6D',
+                },
+              }}
+            >
+              Skills
+            </Button>
+          </Stack>
+        </div>
+        <div className="flex flex-1 px-6 justify-center border border-red-500">{renderContent()}</div>
+      </div>
+      
+      <footer className="border border-red-500">
+        <div className="flex items-center justify-center">
+          <FaLinkedin size={36}/>
+        </div>
+        <div className="flex flex-row items-center justify-center py-3 space-x-5">
+          <MdLocalPhone size={36}/>
+          <Button 
+            variant="text"
             sx={{
-              width: '120px',
+              color: 'white',
               fontFamily: "inherit",
               textTransform: "none",
-              backgroundColor: '#D9D9D9',
-              color: 'white',
-              padding: '10px 20px',
-              borderRadius: '10px',
+              fontWeight: "bold",
               '&:hover': {
-                backgroundColor: '#B36D6D',
-              },
+                  backgroundColor: '#473c3c',
+                },
             }}
           >
-            Experience
+              Contact Me
           </Button>
-          <Button
-            variant="contained"
-            sx={{
-              width: '120px',
-              fontFamily: "inherit",
-              textTransform: "none",
-              backgroundColor: '#D9D9D9',
-              color: 'white',
-              padding: '10px 20px',
-              borderRadius: '10px',
-              '&:hover': {
-                backgroundColor: '#B36D6D',
-              },
-            }}
-          >
-            Education
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              width: '120px',
-              fontFamily: "inherit",
-              textTransform: "none",
-              backgroundColor: '#D9D9D9',
-              color: 'white',
-              padding: '10px 20px',
-              borderRadius: '10px',
-              '&:hover': {
-                backgroundColor: '#B36D6D',
-              },
-            }}
-          >
-            Projects
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              width: '120px',
-              fontFamily: "inherit",
-              textTransform: "none",
-              backgroundColor: '#D9D9D9',
-              color: 'white',
-              padding: '10px 20px',
-              borderRadius: '10px',
-              '&:hover': {
-                backgroundColor: '#B36D6D',
-              },
-            }}
-          >
-            Skills
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              width: '120px',
-              fontFamily: "inherit",
-              textTransform: "none",
-              backgroundColor: '#D9D9D9',
-              color: 'white',
-              padding: '10px 20px',
-              borderRadius: '10px',
-              '&:hover': {
-                backgroundColor: '#B36D6D',
-              },
-            }}
-          >
-            Contact
-          </Button>
-        
-        </Stack>
-          <h2 className="text-2xl font-semibold mb-4 mt-4">Experience</h2>
-          <ul>
-            <li>Software Engineer Fellow - BU Spark!</li>
-            <li>Research Assistant - H2x Lab</li>
-          </ul>
-        </section>
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold mb-4">Education</h2>
-          <p>Boston University, Bachelor's Degree in Computer Science</p>
-          <p>GPA: 3.63</p>
-        </section>
-      </main>
+          <MdEmail size={36}/>
+        </div>
+      </footer>
     </div>
   );
 }
