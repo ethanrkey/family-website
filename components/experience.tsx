@@ -4,13 +4,13 @@ import 'react-vertical-timeline-component/style.min.css';
 
 export default function Experience() {
     return (
-        <div style={{ transform: "scale(0.75)", transformOrigin: "top left" }}>
+        <div style={{ transform: "scale(0.8)", position: "relative", top: "-50px" }}>
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: '#B36D6D', color: '#fff' }}
             contentArrowStyle={{ borderRight: '7px solid  #ffffff' }}
-            date="2011 - present"
+            date="October 2024 - Present"
             iconStyle={{ background: '#2196f3', color: '#fff' }}
             // icon={<WorkIcon />}
           >
@@ -25,7 +25,7 @@ export default function Experience() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: '#B36D6D', color: '#fff' }}
             contentArrowStyle={{ borderRight: '7px solid  #ffffff' }}
-            date="2011 - present"
+            date="September 2024 - December 2024"
             iconStyle={{ background: '#2196f3', color: '#fff' }}
             // icon={<WorkIcon />}
           >
@@ -39,7 +39,7 @@ export default function Experience() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: '#B36D6D', color: '#fff' }}
             contentArrowStyle={{ borderRight: '7px solid  #ffffff' }}
-            date="2011 - present"
+            date="September 2024 - December 2024"
             iconStyle={{ background: '#2196f3', color: '#fff' }}
             // icon={<WorkIcon />}
           >
@@ -53,7 +53,7 @@ export default function Experience() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: '#B36D6D', color: '#fff' }}
             contentArrowStyle={{ borderRight: '7px solid  #ffffff' }}
-            date="2011 - present"
+            date="January 2024 - May 2024"
             iconStyle={{ background: '#2196f3', color: '#fff' }}
             // icon={<WorkIcon />}
           >

@@ -33,13 +33,13 @@ export default function EthanKey() {
 
   return (
     <div className="bg-[#4B4B4B] flex flex-col min-h-screen">
-      <header className="flex flex-col items-center justify-center h-48 border border-red-500">
+      <header className="flex flex-col items-center justify-center h-48">
         <Link href="/">
-          <h1 className="text-4xl font-bold">Ethan Key</h1>
+          <h1 className="text-5xl font-bold">Ethan Key</h1>
         </Link>
       </header>
       <div className="flex flex-1">
-        <div className="flex justify-center w-1/5 py-16 border border-red-500">
+        <div className="flex justify-center w-1/5 py-16">
           <Stack spacing={3} direction="column">
             <Button
               onClick={() => setActiveSection("Experience")}
@@ -49,10 +49,10 @@ export default function EthanKey() {
                 width: '150px',
                 fontFamily: "inherit",
                 textTransform: "none",
-                backgroundColor: activeSection === "Experience" ? "#B36D6D" : "#D9D9D9",
+                backgroundColor: activeSection === "Experience" ? "#B36D6D" : "#a6a6a6",
                 color: "white",
                 padding: '10px 20px',
-                borderRadius: '10px',
+                borderRadius: '12px',
                 '&:hover': {
                   backgroundColor: '#B36D6D',
                 },
@@ -68,10 +68,10 @@ export default function EthanKey() {
                 width: '150px',
                 fontFamily: "inherit",
                 textTransform: "none",
-                backgroundColor: activeSection === "Education" ? "#B36D6D" : "#D9D9D9",
+                backgroundColor: activeSection === "Education" ? "#B36D6D" : "#a6a6a6",
                 color: 'white',
                 padding: '10px 20px',
-                borderRadius: '10px',
+                borderRadius: '12px',
                 '&:hover': {
                   backgroundColor: '#B36D6D',
                 },
@@ -87,10 +87,10 @@ export default function EthanKey() {
                 width: '150px',
                 fontFamily: "inherit",
                 textTransform: "none",
-                backgroundColor: activeSection === "Projects" ? "#B36D6D" : "#D9D9D9",
+                backgroundColor: activeSection === "Projects" ? "#B36D6D" : "#a6a6a6",
                 color: 'white',
                 padding: '10px 20px',
-                borderRadius: '10px',
+                borderRadius: '12px',
                 '&:hover': {
                   backgroundColor: '#B36D6D',
                 },
@@ -106,10 +106,10 @@ export default function EthanKey() {
                 width: '150px',
                 fontFamily: "inherit",
                 textTransform: "none",
-                backgroundColor: activeSection === "Skills" ? "#B36D6D" : "#D9D9D9",
+                backgroundColor: activeSection === "Skills" ? "#B36D6D" : "#a6a6a6",
                 color: 'white',
                 padding: '10px 20px',
-                borderRadius: '10px',
+                borderRadius: '12px',
                 '&:hover': {
                   backgroundColor: '#B36D6D',
                 },
@@ -119,10 +119,10 @@ export default function EthanKey() {
             </Button>
           </Stack>
         </div>
-        <div className="flex flex-1 px-6 justify-center border border-red-500">{renderContent()}</div>
+        <div className="flex flex-1 justify-center">{renderContent()}</div>
       </div>
       
-      <footer className="border border-red-500">
+      <footer className="">
         <div className="flex items-center justify-center">
           <FaLinkedin size={36}/>
         </div>
