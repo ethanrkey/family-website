@@ -6,55 +6,54 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import 'swiper/css/effect-coverflow';
 
 export default function Projects() {
     const cards = [
         {
           title: 'AccessiScan',
-          description: 'Description for card 1',
-          image: 'https://via.placeholder.com/300',
+          description: 'Chrome extension and connected website for developers to improve the accessiblity of their websites',
+          image: 'accessiscan.png',
         },
         {
           title: 'Global Conflict Visualizer',
-          description: 'Description for card 2',
-          image: 'https://via.placeholder.com/300',
+          description: 'Tool which visualizes various international conflicts from the 20th and 21st centuries',
+          image: 'gcv.png',
         },
         {
           title: 'Stock Trading Simulator',
-          description: 'Description for card 3',
-          image: 'https://via.placeholder.com/300',
+          description: 'Paper trading platform to practice stock market strategies',
+          image: 'stocktrading.png',
         },
         {
           title: 'Text Image Generator',
-          description: 'Description for card 4',
-          image: 'https://via.placeholder.com/300',
+          description: 'Generate an image from any text description',
+          image: 'texttoimage.png',
         },
       ];
       
     return (
+      <div style={{ transform: "scale(.9)", paddingBottom: "40px"}} className="fade-in">
         <Swiper
-    style={{ maxWidth: '1000px', margin: '0 auto' }}
-      modules={[Navigation]} // Register navigation
+      effect={'coverflow'}
+      style={{ maxWidth: '495px', margin: '0 auto' }}
+      modules={[Navigation, Pagination, EffectCoverflow]} // Register navigation
       navigation
-      pagination={{ clickable: true }}
+      pagination={{ clickable: true, el: ".pagination-dots" }}
+      loop={true}
       spaceBetween={20}
-      slidesPerView={4} // Adjust for responsiveness
+      slidesPerView={1} // Adjust for responsiveness
       observer={true}
       observeParents={true}
-      breakpoints={{
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      }}
+      centeredSlides={true}
     >
       {cards.map((card, index) => (
         <SwiperSlide key={index}>
-          <Card sx={{ maxWidth: '100%' }}>
+          <Card sx={{ width: '495px', height: '630px' }}>
             <CardMedia
               component="img"
               height="140"
@@ -72,6 +71,9 @@ export default function Projects() {
           </Card>
         </SwiperSlide>
       ))}
+      <div className="pagination-dots flex justify-center pt-5"></div>
     </Swiper>
+    
+    </div>
     );
 }

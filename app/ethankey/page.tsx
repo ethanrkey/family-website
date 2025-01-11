@@ -5,12 +5,14 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Experience from "@/components/experience";
 import Education from "@/components/education";
-import Projects from "@/components/projects";
+const Projects = dynamic(() => import('@/components/projects'), { ssr: false });
 import Skills from "@/components/skills";
 import About from "@/components/about";
+import About2 from "@/components/about2";
 import { MdLocalPhone } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
+import dynamic from 'next/dynamic';
 
 
 export default function EthanKey() {
@@ -26,6 +28,8 @@ export default function EthanKey() {
         return <Projects />;
       case "Skills":
         return <Skills />;
+      case "About2":
+        return <About2 />;
       default:
         return <About />;
     }
@@ -33,13 +37,13 @@ export default function EthanKey() {
 
   return (
     <div className="bg-[#4B4B4B] flex flex-col min-h-screen">
-      <header className="flex flex-col items-center justify-center h-48">
+      <header className="flex flex-col items-center justify-center h-48 border border-red-500">
         <Link href="/">
           <h1 className="text-5xl font-bold">Ethan Key</h1>
         </Link>
       </header>
       <div className="flex flex-1">
-        <div className="flex justify-center w-1/5 py-16">
+        <div className="flex justify-center w-1/5 py-16 border border-red-500">
           <Stack spacing={3} direction="column">
             <Button
               onClick={() => setActiveSection("Experience")}
@@ -117,12 +121,31 @@ export default function EthanKey() {
             >
               Skills
             </Button>
+            <Button
+              onClick={() => setActiveSection("About2")}
+              variant="contained"
+              sx={{
+                height: "60px", 
+                width: '150px',
+                fontFamily: "inherit",
+                textTransform: "none",
+                backgroundColor: activeSection === "About2" ? "#B36D6D" : "#a6a6a6",
+                color: 'white',
+                padding: '10px 20px',
+                borderRadius: '12px',
+                '&:hover': {
+                  backgroundColor: '#B36D6D',
+                },
+              }}
+            >
+              About
+            </Button>
           </Stack>
         </div>
-        <div className="flex flex-1 justify-center">{renderContent()}</div>
+        <div className="flex flex-1 justify-center border border-red-500">{renderContent()}</div>
       </div>
       
-      <footer className="">
+      <footer className="border border-red-500">
         <div className="flex items-center justify-center">
           <FaLinkedin size={36}/>
         </div>
