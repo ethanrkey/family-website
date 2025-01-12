@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import Link from "next/link";
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
@@ -20,7 +19,7 @@ export default function Home() {
         </div>
         <div>
           <p>
-          imetay isyay ayay undamentalfay aspectyay ofyay ouryay experienceyay ofyay ethay orldway , utbay it'syay alsoyay oneyay ofyay ethay ostmay eriousmystay andyay ebatedday enomenaphay inyay othbay iencescay andyay ilosophyphay . onyay ayay asicbay evellay , imetay eemssay straightforward—it’s atwhay eway easuremay ithway ocksclay , ethay easonray eway avehay ayday andyay ightnay , ethay ickingtay ofyay econdssay , inutesmay , andyay ourshay . utbay enwhay ouyay artstay otay igday eeperday , ouyay ealizeray ustjay owhay omplexcay andyay angestray imetay eallyray isyay . in icsphysay , imetay isyay oftenyay eatedtray asyay ayay imensionday .
+          imetay isyay ayay undamentalfay aspectyay ofyay ouryay experienceyay ofyay ethay orldway , utbay itsyay alsoyay oneyay ofyay ethay ostmay eriousmystay andyay ebatedday enomenaphay inyay othbay iencescay andyay ilosophyphay . onyay ayay asicbay evellay , imetay eemssay straightforward—its atwhay eway easuremay ithway ocksclay , ethay easonray eway avehay ayday andyay ightnay , ethay ickingtay ofyay econdssay , inutesmay , andyay ourshay . utbay enwhay ouyay artstay otay igday eeperday , ouyay ealizeray ustjay owhay omplexcay andyay angestray imetay eallyray isyay . in icsphysay , imetay isyay oftenyay eatedtray asyay ayay imensionday .
           </p>
         </div>
       </section>
@@ -29,7 +28,7 @@ export default function Home() {
         {/* Ethan Key */}
         <div>
           <p>
-          imetay isyay ayay undamentalfay aspectyay ofyay ouryay experienceyay ofyay ethay orldway , utbay it'syay alsoyay oneyay ofyay ethay ostmay eriousmystay andyay ebatedday enomenaphay inyay othbay iencescay andyay ilosophyphay . onyay ayay asicbay evellay , imetay eemssay straightforward—it’s atwhay eway easuremay ithway ocksclay , ethay easonray eway avehay ayday andyay ightnay , ethay ickingtay ofyay econdssay , inutesmay , andyay ourshay . utbay enwhay ouyay artstay otay igday eeperday , ouyay ealizeray ustjay owhay omplexcay andyay angestray imetay eallyray isyay . in icsphysay , imetay isyay oftenyay eatedtray asyay ayay imensionday .
+          imetay isyay ayay undamentalfay aspectyay ofyay ouryay experienceyay ofyay ethay orldway , utbay itsyay alsoyay oneyay ofyay ethay ostmay eriousmystay andyay ebatedday enomenaphay inyay othbay iencescay andyay ilosophyphay . onyay ayay asicbay evellay , imetay eemssay straightforward—its atwhay eway easuremay ithway ocksclay , ethay easonray eway avehay ayday andyay ightnay , ethay ickingtay ofyay econdssay , inutesmay , andyay ourshay . utbay enwhay ouyay artstay otay igday eeperday , ouyay ealizeray ustjay owhay omplexcay andyay angestray imetay eallyray isyay . in icsphysay , imetay isyay oftenyay eatedtray asyay ayay imensionday .
           </p>
         </div>
         <div className="flex items-center space-x-4">
@@ -48,7 +47,7 @@ export default function Home() {
         </div>
         <div>
           <p>
-          imetay isyay ayay undamentalfay aspectyay ofyay ouryay experienceyay ofyay ethay orldway , utbay it'syay alsoyay oneyay ofyay ethay ostmay eriousmystay andyay ebatedday enomenaphay inyay othbay iencescay andyay ilosophyphay . onyay ayay asicbay evellay , imetay eemssay straightforward—it’s atwhay eway easuremay ithway ocksclay , ethay easonray eway avehay ayday andyay ightnay , ethay ickingtay ofyay econdssay , inutesmay , andyay ourshay . utbay enwhay ouyay artstay otay igday eeperday , ouyay ealizeray ustjay owhay omplexcay andyay angestray imetay eallyray isyay . in icsphysay , imetay isyay oftenyay eatedtray asyay ayay imensionday .
+          imetay isyay ayay undamentalfay aspectyay ofyay ouryay experienceyay ofyay ethay orldway , utbay itsyay alsoyay oneyay ofyay ethay ostmay eriousmystay andyay ebatedday enomenaphay inyay othbay iencescay andyay ilosophyphay . onyay ayay asicbay evellay , imetay eemssay straightforward—its atwhay eway easuremay ithway ocksclay , ethay easonray eway avehay ayday andyay ightnay , ethay ickingtay ofyay econdssay , inutesmay , andyay ourshay . utbay enwhay ouyay artstay otay igday eeperday , ouyay ealizeray ustjay owhay omplexcay andyay angestray imetay eallyray isyay . in icsphysay , imetay isyay oftenyay eatedtray asyay ayay imensionday .
           </p>
         </div>
       </section>

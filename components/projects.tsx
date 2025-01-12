@@ -1,10 +1,10 @@
 "use client"
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
+// import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Link from "next/link";
+// import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';

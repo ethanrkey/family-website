@@ -39,7 +39,7 @@ export default function EthanKey() {
     <div className="bg-[#4B4B4B] flex flex-col min-h-screen">
       <header className="flex flex-col items-center justify-center h-48 border border-red-500">
         <Link href="/">
-          <h1 className="text-5xl font-bold">Ethan Key</h1>
+          <h1 className="text-6xl font-bold">Ethan Key</h1>
         </Link>
       </header>
       <div className="flex flex-1">
@@ -145,7 +145,7 @@ export default function EthanKey() {
         <div className="flex flex-1 justify-center border border-red-500">{renderContent()}</div>
       </div>
       
-      <footer className="border border-red-500">
+      <footer className="pt-4 border border-red-500">
         <div className="flex items-center justify-center">
           <FaLinkedin size={36}/>
         </div>
