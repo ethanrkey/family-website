@@ -4,7 +4,7 @@ export default function Education() {
         <h2 className="text-2xl font-bold">Education</h2>
         <ul className="mt-4">
           <li>Boston University</li>
-          <li> Bachelor’s Degree in Computer Science</li>
+          <li> Bachelor&apos;s Degree in Computer Science</li>
           <li>Boston, MA</li>
           <li>Year: Junior</li>
           <li>GPA: 3.63</li>
@@ -20,6 +20,8 @@ export default function Education() {
                 <li>• CS460 | Database Systems</li>
                 <li>• CS411 | Software Engineering</li>
                 <li>• CS320 | Concepts of Programming Languages</li>
+                <li>• CS391 | Web Application Development</li>
+                <li>• CS440 | Introduction to Artificial Intelligence</li>
             </ul>
           </li>
         </ul>
