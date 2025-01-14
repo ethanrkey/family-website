@@ -170,7 +170,7 @@ export default function EthanKey() {
                 textTransform: "none",
                 fontWeight: "bold",
                 '&:hover': {
-                    backgroundColor: '#473c3c',
+                    backgroundColor: '#556968',
                   },
               }}
             >

@@ -1,7 +1,7 @@
 export default function Education() {
     return (
       <div>
-        <h2 className="text-2xl font-bold">Education</h2>
+        <h2 className="text-2xl font-bold pt-4">Education</h2>
         <ul className="mt-4">
           <li>Boston University</li>
           <li> Bachelor&apos;s Degree in Computer Science</li>

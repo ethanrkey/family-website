@@ -1,6 +1,6 @@
 export default function About2() {
     return (
-      <div>
+      <div className="pt-6">
         <h2 className="text-2xl text-center font-bold">About Me</h2>
         <ul className="mt-4">
           <p className="text-center mx-60">I am a junior at Boston University studying Computer Science. I&apos;m a coder blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
