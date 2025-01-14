@@ -3,7 +3,10 @@ import Card from '@mui/material/Card';
 // import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import CardActions from '@mui/material/CardActions';
+import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
 // import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
@@ -11,6 +14,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
+import OutboundIcon from '@mui/icons-material/Outbound';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function Projects() {
     const cards = [
@@ -18,21 +23,26 @@ export default function Projects() {
           title: 'AccessiScan',
           description: 'Chrome extension and connected website for developers to improve the accessiblity of their websites',
           image: 'accessiscan.png',
+          github: 'https://github.com/AccessiScan-XC475',
+          liveproject: 'https://accessiscan.vercel.app/',
         },
         {
           title: 'Global Conflict Visualizer',
           description: 'Tool which visualizes various international conflicts from the 20th and 21st centuries',
           image: 'gcv.png',
+          github: 'https://github.com/ethanrkey/global-conflict-visualizer',
         },
         {
           title: 'Stock Trading Simulator',
           description: 'Paper trading platform to practice stock market strategies',
           image: 'stocktrading.png',
+          github: 'https://github.com/ethanrkey/stock-trading-app',
         },
         {
           title: 'Text Image Generator',
           description: 'Generate an image from any text description',
           image: 'texttoimage.png',
+          github: 'https://github.com/ethanrkey/text-to-image',
         },
       ];
       
@@ -53,7 +63,7 @@ export default function Projects() {
     >
       {cards.map((card, index) => (
         <SwiperSlide key={index}>
-          <Card sx={{ width: '495px', height: '630px' }}>
+          <Card sx={{ width: '495px', height: '675px' }}>
             <CardMedia
               component="img"
               height="140"
@@ -68,6 +78,24 @@ export default function Projects() {
                 {card.description}
               </Typography>
             </CardContent>
+            <CardActions sx={{position: "absolute", bottom: 4, left: 4}}>
+              <a href={card.github} target="_blank">
+                <Tooltip title="GitHub Repository">
+                  <IconButton>
+                    <GitHubIcon sx={{color: "#000000", fontSize: 45}}/>
+                  </IconButton>
+                </Tooltip>
+              </a>
+              {card.liveproject && (
+                <a href={card.liveproject} target="_blank">
+                <Tooltip title="Deployed Project">
+                  <IconButton>
+                    <OutboundIcon sx={{color: "#000000", fontSize: 50}}/>
+                  </IconButton>
+                </Tooltip>
+              </a>
+              )}
+            </CardActions>
           </Card>
         </SwiperSlide>
       ))}

@@ -1,28 +1,26 @@
-import { FaGitAlt } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaPython } from "react-icons/fa6";
-import { FaJava } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
+import { FaGitAlt, FaGithub, FaJava, FaReact, FaNodeJs, FaHtml5, FaSwift, FaDatabase, FaFigma, FaMicrosoft, FaGoogle } from "react-icons/fa";
+import { FaPython, FaGolang } from "react-icons/fa6";
+import { IoLogoJavascript, IoLogoVercel } from "react-icons/io5";
 import { BiLogoTypescript } from "react-icons/bi";
-import { FaReact } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
-import { FaHtml5 } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
-import { FaSwift } from "react-icons/fa";
-import { FaGolang } from "react-icons/fa6";
-import { FaDatabase } from "react-icons/fa";
-import { SiMongodb } from "react-icons/si";
+import { SiMongodb, SiChromewebstore, SiLatex, SiXcode } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import { FaFigma } from "react-icons/fa";
-import { FaMicrosoft } from "react-icons/fa";
-import { SiChromewebstore } from "react-icons/si";
-import { SiLatex } from "react-icons/si";
 import { DiDocker } from "react-icons/di";
-import { IoLogoVercel } from "react-icons/io5";
-import { FaGoogle } from "react-icons/fa";
-import { SiXcode } from "react-icons/si";
-import Tooltip from '@mui/material/Tooltip';
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: theme.palette.common.white,
+      color: 'rgba(0, 0, 0, 0.87)',
+      boxShadow: theme.shadows[1],
+      fontSize: 11,
+    },
+  }));
 
 export default function Skills() {
     return (
@@ -31,83 +29,83 @@ export default function Skills() {
         <h2 className="flex justify-center text-2xl pb-2">Programming Languages and Frameworks</h2>
         <div className="flex justify-center pt-2">
             <div className="grid grid-cols-4 gap-16">
-                <Tooltip title="Python">
+                <LightTooltip title="Python"> 
                 <FaPython size={80} className="hover:fill-[#387eb0]"/> 
-                </Tooltip>
-                <Tooltip title="Java">
+                </LightTooltip>
+                <LightTooltip title="Java">
                 <FaJava size={80} className="hover:fill-[#387eb0]"/>
-                </Tooltip>
-                <Tooltip title="JavaScript">
+                </LightTooltip>
+                <LightTooltip title="JavaScript">
                 <IoLogoJavascript size={80} className="hover:fill-[#d1d422]"/>
-                </Tooltip>
-                <Tooltip title="TypeScript">
+                </LightTooltip>
+                <LightTooltip title="TypeScript">
                 <BiLogoTypescript size={80} className="hover:fill-[#0c82c7]"/>
-                </Tooltip>
-                <Tooltip title="React">
+                </LightTooltip>
+                <LightTooltip title="React">
                 <FaReact size={80} className="hover:fill-[#30abf2]"/>
-                </Tooltip>
-                <Tooltip title="Node.js">
+                </LightTooltip>
+                <LightTooltip title="Node.js">
                 <FaNodeJs size={80} className="hover:fill-[#416b29]"/>
-                </Tooltip>
-                <Tooltip title="Next.js">
+                </LightTooltip>
+                <LightTooltip title="Next.js">
                 <TbBrandNextjs size={80} className="hover:fill-[#000000]"/>
-                </Tooltip>
-                <Tooltip title="HTML">
+                </LightTooltip>
+                <LightTooltip title="HTML">
                 <FaHtml5 size={80} className="hover:fill-[#d43e0d]"/>
-                </Tooltip>
-                <Tooltip title="CSS">
+                </LightTooltip>
+                <LightTooltip title="CSS">
                 <IoLogoCss3 size={80} className="hover:fill-[#112ad1]"/>
-                </Tooltip>
-                <Tooltip title="Swift">
+                </LightTooltip>
+                <LightTooltip title="Swift">
                 <FaSwift size={80} className="hover:fill-[#ed7d0c]"/>
-                </Tooltip>
-                <Tooltip title="Go">
+                </LightTooltip>
+                <LightTooltip title="Go">
                 <FaGolang size={80} className="hover:fill-[#2985cc]"/>
-                </Tooltip>
-                <Tooltip title="SQL">
+                </LightTooltip>
+                <LightTooltip title="SQL">
                 <FaDatabase size={80} className="hover:fill-[#6f7a82]"/>
-                </Tooltip>
+                </LightTooltip>
             </div>
         </div>
         <h2 className="flex justify-center text-2xl pt-8 pb-2">Tools and Technologies</h2>
         <div className="flex justify-center pt-2">
             <div className="grid grid-cols-4 gap-16">
-                <Tooltip title="MongoDB">
+                <LightTooltip title="MongoDB">
                 <SiMongodb size={80} className="hover:fill-[#2c7a2f]"/>
-                </Tooltip>
-                <Tooltip title="Git">
+                </LightTooltip>
+                <LightTooltip title="Git">
                 <FaGitAlt size={80} className="hover:fill-[#b53910]"/>
-                </Tooltip>
-                <Tooltip title="GitHub">
+                </LightTooltip>
+                <LightTooltip title="GitHub">
                 <FaGithub size={80} className="hover:fill-[#000000]"/>
-                </Tooltip>
-                <Tooltip title="VSCode">
+                </LightTooltip>
+                <LightTooltip title="VSCode">
                 <VscVscode size={80} className="hover:fill-[#157dc2]"/>
-                </Tooltip>
-                <Tooltip title="XCode">
+                </LightTooltip>
+                <LightTooltip title="XCode">
                 <SiXcode size={80} className="hover:fill-[#32aafa]"/>
-                </Tooltip>
-                <Tooltip title="Docker">
+                </LightTooltip>
+                <LightTooltip title="Docker">
                 <DiDocker size={80} className="hover:fill-[#2847fa]"/>
-                </Tooltip>
-                <Tooltip title="Vercel">
+                </LightTooltip>
+                <LightTooltip title="Vercel">
                 <IoLogoVercel size={80} className="hover:fill-[#000000]"/>
-                </Tooltip>
-                <Tooltip title="Figma">
+                </LightTooltip>
+                <LightTooltip title="Figma">
                 <FaFigma size={80} className="hover:fill-[#d66969]"/>
-                </Tooltip>
-                <Tooltip title="LaTeX">
+                </LightTooltip>
+                <LightTooltip title="LaTeX">
                 <SiLatex size={80} className="hover:fill-[#117367]"/>
-                </Tooltip>
-                <Tooltip title="Chrome Extensions">
+                </LightTooltip>
+                <LightTooltip title="Chrome Extensions">
                 <SiChromewebstore size={80} className="hover:fill-[#21962f]"/>
-                </Tooltip>
-                <Tooltip title="Microsoft Office">
+                </LightTooltip>
+                <LightTooltip title="Microsoft Office">
                 <FaMicrosoft size={80} className="hover:fill-[#e83c15]"/>
-                </Tooltip>
-                <Tooltip title="Google Workspace">
+                </LightTooltip>
+                <LightTooltip title="Google Workspace">
                 <FaGoogle size={80} className="hover:fill-[#387eb0]"/>
-                </Tooltip>
+                </LightTooltip>
             </div>
         </div>
     </div>

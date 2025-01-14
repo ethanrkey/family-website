@@ -4,7 +4,7 @@ import 'react-vertical-timeline-component/style.min.css';
 
 export default function Experience() {
     return (
-        <div style={{ transform: "scale(0.8)", position: "relative", top: "-50px" }}>
+        <div style={{ transform: "scale(0.9)", position: "relative", top: "-10px" }}>
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
