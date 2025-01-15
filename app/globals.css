@@ -46,10 +46,16 @@ body {
 .expandable-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.4s ease-in-out;
+  cursor: pointer;
 }
 
-/* Expand when parent is hovered */
-.vertical-timeline-element--work:hover .expandable-content {
-  max-height: 1000px; /* Or any sufficiently large value to fit content */
+/* Expand on hover */
+.content:hover .expandable-content {
+  max-height: 1000px; /* Or a large enough value */
+}
+
+/* Stay expanded on click */
+.vertical-timeline-element--work.clicked .expandable-content {
+  max-height: 1000px;
 }

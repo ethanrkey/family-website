@@ -49,13 +49,25 @@ export default function Experience() {
         }
     ]
 
+    const [clickedIndices, setClickedIndices] = useState<number[]>([]);
+
+    const toggleExpand = (index: number) => {
+        setClickedIndices((prev) =>
+            prev.includes(index)
+            ? prev.filter((i) => i !== index) // Collapse if already expanded
+            : [...prev, index] // Expand if not already expanded
+        );
+    };
+
     return (
         <div style={{ transform: "scale(0.9)", position: "relative", top: "-10px" }}>
         <VerticalTimeline>
             {timelineData.map((item, index) => (
           <VerticalTimelineElement
             key={index}
-            className="vertical-timeline-element--work"
+            className={`vertical-timeline-element--work ${
+                clickedIndices.includes(index) ? "clicked" : ""
+              }`}
             contentStyle={{ 
                 background: '#B36D6D', 
                 color: '#fff' 
@@ -63,16 +75,18 @@ export default function Experience() {
             }}
             contentArrowStyle={{ borderRight: '7px solid  #ffffff' }}
             date={item.date}
-            iconStyle={{ background: '#60a8a8', color: '#fff' }}
+            iconStyle={{ background: clickedIndices.includes(index) ? '#8bf0f0' : '#60a8a8', color: '#fff' }}
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title">{item.position}</h3>
-            <h3 className="vertical-timeline-element-title">{item.company}</h3>
-            <h4 className="vertical-timeline-element-subtitle">{item.location}</h4>
-            <div className="expandable-content">
-            {item.description.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-            ))}
+            <div className="content" onClick={() => toggleExpand(index)}>
+                <h3 className="vertical-timeline-element-title">{item.position}</h3>
+                <h3 className="vertical-timeline-element-title">{item.company}</h3>
+                <h4 className="vertical-timeline-element-subtitle">{item.location}</h4>
+                <div className="expandable-content">
+                    {item.description.map((paragraph, idx) => (
+                        <p key={idx}>{paragraph}</p>
+                    ))}
+                </div>
             </div>
           </VerticalTimelineElement>
             ))}

@@ -6,7 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
+import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
 // import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
@@ -45,6 +46,17 @@ export default function Projects() {
           github: 'https://github.com/ethanrkey/text-to-image',
         },
       ];
+
+      const DarkTooltip = styled(({ className, ...props }: TooltipProps) => (
+        <Tooltip {...props} arrow classes={{ popper: className }} />
+      ))(({ theme }) => ({
+        [`& .${tooltipClasses.arrow}`]: {
+          color: theme.palette.common.black,
+        },
+        [`& .${tooltipClasses.tooltip}`]: {
+          backgroundColor: theme.palette.common.black,
+        },
+      }));
       
     return (
       <div style={{ transform: "scale(.9)", paddingBottom: "40px"}} className="fade-in">
@@ -80,19 +92,19 @@ export default function Projects() {
             </CardContent>
             <CardActions sx={{position: "absolute", bottom: 4, left: 4}}>
               <a href={card.github} target="_blank">
-                <Tooltip title="GitHub Repository">
+                <DarkTooltip title="GitHub Repository">
                   <IconButton>
                     <GitHubIcon sx={{color: "#000000", fontSize: 45}}/>
                   </IconButton>
-                </Tooltip>
+                </DarkTooltip>
               </a>
               {card.liveproject && (
                 <a href={card.liveproject} target="_blank">
-                <Tooltip title="Deployed Project">
+                <DarkTooltip title="Deployed Project">
                   <IconButton>
                     <OutboundIcon sx={{color: "#000000", fontSize: 50}}/>
                   </IconButton>
-                </Tooltip>
+                </DarkTooltip>
               </a>
               )}
             </CardActions>
