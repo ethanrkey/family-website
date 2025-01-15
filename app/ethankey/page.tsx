@@ -8,7 +8,7 @@ import Education from "@/components/education";
 const Projects = dynamic(() => import('@/components/projects'), { ssr: false });
 import Skills from "@/components/skills";
 import About from "@/components/about";
-import About2 from "@/components/about2";
+import Personal from "@/components/personal";
 import { MdLocalPhone } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
@@ -30,7 +30,7 @@ export default function EthanKey() {
       case "Skills":
         return <Skills />;
       case "About2":
-        return <About2 />;
+        return <Personal />;
       default:
         return <About />;
     }
@@ -139,7 +139,7 @@ export default function EthanKey() {
                 },
               }}
             >
-              About
+              Personal
             </Button>
           </Stack>
         </div>

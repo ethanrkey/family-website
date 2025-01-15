@@ -1,4 +1,4 @@
-export default function About2() {
+export default function Personal() {
     return (
       <div className="pt-6">
         <h2 className="text-2xl text-center font-bold">About Me</h2>
