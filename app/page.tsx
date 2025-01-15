@@ -19,7 +19,7 @@ export default function Home() {
         </div>
         <div className="border border-yellow-500">
           <p>
-            Amy is a Registered Nurse, Nurse Injector, Medical Claim Assessor, and Yoga Instructor. She graduated from the UT Arlington College of Nursing in 19__, earning a Bachelor of Science in Nursing. Amy is a mother to two sons, Ethan and Bryce, and two dogs, Gigi and Geoffrey. She enjoys spending time with her sons, her dogs, and her best friends, "the Beavers". Amy is a lifelong Texan, born and raised in DFW.
+            Amy is a Registered Nurse, Nurse Injector, Medical Claim Assessor, and Yoga Instructor. She graduated from the UT Arlington College of Nursing in 19__, earning a Bachelor of Science in Nursing. Amy is a mother to two sons, Ethan and Bryce, and two dogs, Gigi and Geoffrey. She enjoys spending time with her sons, her dogs, and her best friends, &quot;the Beavers&quot;. Amy is a lifelong Texan, born and raised in DFW.
           </p>
         </div>
       </section>

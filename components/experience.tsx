@@ -3,8 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import 'react-vertical-timeline-component/style.min.css';
 
 export default function Experience() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
+    
     const timelineData = [
         {
             position: "Software Development Research Assistant",
