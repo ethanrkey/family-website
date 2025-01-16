@@ -11,7 +11,7 @@ export default function Home() {
         <p className="text-4xl leading-tight text-primary text-center py-6 border border-green-500">Dedicated. Resilient. Determined.</p>
         
       {/* Family Members Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-5 gap-7 my-6 border border-green-500">
+      <div className="flex flex-row items-center justify-between px-6 md:px-16 py-5 gap-7 my-6 border border-green-500">
         {/* Amy Key */}
         <div className="flex flex-col justify-center items-center border border-yellow-500">
           <Avatar alt="Amy Key" src="/mom3.jpg" sx={{ width: 150, height: 150 }}/>
@@ -22,9 +22,9 @@ export default function Home() {
             Amy is a Registered Nurse, Nurse Injector, Medical Claim Assessor, and Yoga Instructor. She graduated from the UT Arlington College of Nursing in 19__, earning a Bachelor of Science in Nursing. Amy is a mother to two sons, Ethan and Bryce, and two dogs, Gigi and Geoffrey. She enjoys spending time with her sons, her dogs, and her best friends, &quot;the Beavers&quot;. Amy is a lifelong Texan, born and raised in DFW.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-5 gap-7 my-6 border border-green-500">
+      <div className="flex flex-row items-center justify-between px-6 md:px-16 py-5 gap-7 my-6 border border-green-500">
         {/* Ethan Key */}
         <div className="border border-yellow-500">
           <p>
@@ -37,9 +37,9 @@ export default function Home() {
           </Link>
           <h2 className="text-2xl font-semibold">Ethan Key</h2>
         </div>
-      </section>
+      </div>
 
-      <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-5 gap-7 my-6 border border-green-500">
+      <div className="flex flex-row items-center justify-between px-6 md:px-16 py-5 gap-7 my-6 border border-green-500">
         {/* Bryce Key */}
         <div className="flex flex-col justify-center items-center border border-yellow-500">
           <Avatar alt="Bryce Key" src="/bryce2.jpg" sx={{ width: 150, height: 150 }}/>
@@ -50,12 +50,12 @@ export default function Home() {
             Bryce is currently a freshman at Columbia University, where he studies Biochemistry and Philosophy and competes on their Swimming and Diving team. Bryce graduated his high school, The Oakridge School, as the Valedictorian of his class. He is an outstanding scholar, earning a 4.96 weighted GPA in high school, scoring a 35 on the ACT, and currently maintaining a 4.0 GPA at Columbia. In his free time, Bryce likes to spend time with friends, read, crochet, sing, and design fashion. 
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Animated Images Section */}
-      <section className="flex items-center justify-center h-96 bg-gray border border-green-500">
+      <div className="flex items-center justify-center h-96 bg-gray border border-green-500">
         <p className="text-xl">automatically scrolling photo gallery</p>
-      </section>
+      </div>
     </div>
   );
 }

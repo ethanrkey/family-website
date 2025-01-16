@@ -25,8 +25,8 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
 export default function Skills() {
     return (
     <div className="flex flex-col min-h-screen w-full pb-8">
-        <header className="text-3xl font-bold pb-12 pt-8 pl-8">I have experience using these...</header>
-        <h2 className="flex justify-center text-2xl pb-2">Programming Languages and Frameworks</h2>
+        <header className="text-3xl text-[#ffffff] font-bold pb-12 pt-8 pl-8">I have experience using these...</header>
+        <h2 className="flex justify-center text-2xl text-[#ffffff] pb-2">Programming Languages and Frameworks</h2>
         <div className="flex justify-center pt-2">
             <div className="grid grid-cols-4 gap-16">
                 <LightTooltip title="Python"> 
@@ -67,7 +67,7 @@ export default function Skills() {
                 </LightTooltip>
             </div>
         </div>
-        <h2 className="flex justify-center text-2xl pt-8 pb-2">Tools and Technologies</h2>
+        <h2 className="flex justify-center text-2xl text-[#ffffff] pt-8 pb-2">Tools and Technologies</h2>
         <div className="flex justify-center pt-2">
             <div className="grid grid-cols-4 gap-16">
                 <LightTooltip title="MongoDB">

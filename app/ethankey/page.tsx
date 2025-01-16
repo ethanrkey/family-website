@@ -40,7 +40,7 @@ export default function EthanKey() {
     <div className="bg-[#457575] flex flex-col min-h-screen">
       <header className="bg-[#000000] flex flex-col items-center justify-center h-48 border-b-2 border-white">
         <Link href="/">
-          <h1 className="text-6xl font-bold">Ethan Key</h1>
+          <h1 className="text-6xl text-[#ffffff] font-bold">Ethan Key</h1>
         </Link>
       </header>
       <div className="flex flex-1">
