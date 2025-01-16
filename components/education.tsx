@@ -31,7 +31,7 @@ export default function Education() {
 
     return (
       <div className="flex flex-row w-full">
-        <div className="flex flex-col pr-6 pt-8 border">
+        <div className="flex flex-col pr-6 pt-8">
             <h2 className="text-4xl text-[#ffffff] font-bold">Education</h2>
             <p className="pt-4 pl-2 text-[#ffffff]">• Boston University</p>
             <p className="pl-2 text-[#ffffff]">• Bachelor&apos;s Degree in Computer Science</p>
