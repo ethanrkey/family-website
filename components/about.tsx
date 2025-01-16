@@ -8,7 +8,7 @@ export default function About() {
                 {/* Paragraph 1 */}
                 <TypeAnimation
                 sequence={[
-                    "I am a passionate and driven Computer Science student at Boston University, expected to graduate in May 2026. I have a strong foundation in programming, software development, and problem-solving, coupled with a curiosity for learning and applying new technologies. My academic journey has been marked by dedication, perseverance, and a commitment to achieving excellence in all aspects of my work.",
+                    "I am a passionate and driven Computer Science student at Boston University, expected to graduate in May 2026. I have a strong foundation in programming, software development, and problem-solving, coupled with a curiosity for learning and applying new technologies. My academic journey has been marked by dedication, determination, and a commitment to achieving excellence in all aspects of my work. I enjoy tackling challenges that have a meaningful impact. I am particularly drawn to projects that intersect technology with real-world usability, finding fulfillment in crafting solutions that improve user experiences and solve practical problems.",
                 ]}
                 wrapper="p"
                 cursor={true}
@@ -16,7 +16,7 @@ export default function About() {
                 className="text-center text-lg leading-8"
                 />
 
-                {/* Paragraph 2 */}
+                {/* Paragraph 2 
                 <TypeAnimation
                 sequence={[
                     22000, // Wait for 5 seconds to start typing the next paragraph
@@ -27,8 +27,9 @@ export default function About() {
                 repeat={0}
                 className="text-center text-lg leading-8 mt-4"
                 />
+                */}
 
-                {/* Paragraph 3 */}
+                {/* Paragraph 3 
                 <TypeAnimation
                 sequence={[
                     39000, // Wait for 12 seconds to start typing the final paragraph
@@ -39,6 +40,7 @@ export default function About() {
                 repeat={0}
                 className="text-center text-lg leading-8 mt-4"
                 />
+                */}
             </div>
         </div>
       );

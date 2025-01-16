@@ -30,19 +30,20 @@ export default function Education() {
     ];
 
     return (
-      <div className="flex flex-row w-full">
+      <div className="pl-6 flex flex-row w-full">
         <div className="flex flex-col pr-6 pt-8">
             <h2 className="text-4xl text-[#ffffff] font-bold">Education</h2>
             <p className="pt-4 pl-2 text-[#ffffff]">• Boston University</p>
-            <p className="pl-2 text-[#ffffff]">• Bachelor&apos;s Degree in Computer Science</p>
             <p className="pl-2 text-[#ffffff]">• Boston, MA</p>
-            <p className="pl-2 text-[#ffffff]">• Year: Junior</p>
+            <p className="pl-2 text-[#ffffff]">• Bachelor&apos;s Degree</p>
+            <p className="pl-2 text-[#ffffff]">• Major: Computer Science</p>
             <p className="pl-2 text-[#ffffff]">• GPA: 3.63</p>
-            <Link className="rounded-full  scale-75" href="https://www.bu.edu/" target="_blank">
-                <img className="rounded-full" src="bu.png"></img>
+            <p className="pl-2 text-[#ffffff]">• Year: Junior</p>
+            <Link className="pt-6" href="https://www.bu.edu/" target="_blank">
+                <Image className="rounded-full" src="/bu.png" alt="BU" height={350} width={350}></Image>
             </Link>
         </div>
-        <div className="flex w-full flex-col px-20">
+        <div className="flex w-full flex-col ml-6 px-28">
             <h2 className="text-3xl text-[#ffffff] flex justify-center pt-8 pb-6">Relevant Classes Taken</h2>
             <div className="grid-container pt-2 pb-16 fade-in">
             {items.map((item, index) => (

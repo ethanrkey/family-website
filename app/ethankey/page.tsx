@@ -122,6 +122,7 @@ export default function EthanKey() {
             >
               Skills
             </Button>
+            {/*
             <Button
               onClick={() => setActiveSection("About2")}
               variant="contained"
@@ -141,6 +142,7 @@ export default function EthanKey() {
             >
               Personal
             </Button>
+            */}
           </Stack>
         </div>
         <div className="flex flex-1 justify-center">{renderContent()}</div>
