@@ -3,7 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import 'react-vertical-timeline-component/style.min.css';
 
 export default function Experience() {
-    
+
     const timelineData = [
         {
             position: "Software Development Research Assistant",
@@ -74,7 +74,8 @@ export default function Experience() {
             }}
             contentArrowStyle={{ borderRight: '7px solid  #ffffff' }}
             date={item.date}
-            iconStyle={{ background: clickedIndices.includes(index) ? '#8bf0f0' : '#60a8a8', color: '#fff' }}
+            iconStyle={{ background: clickedIndices.includes(index) ? '#8bf0f0' : '#60a8a8', color: '#fff', cursor: 'pointer' }}
+            iconOnClick={() => toggleExpand(index)}
             // icon={<WorkIcon />}
           >
             <div className="content" onClick={() => toggleExpand(index)}>

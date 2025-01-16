@@ -13,6 +13,7 @@ import { MdLocalPhone } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import dynamic from 'next/dynamic';
+import DynamicTitle from "@/components/browsertitle";
 
 
 export default function EthanKey() {
@@ -38,6 +39,7 @@ export default function EthanKey() {
 
   return (
     <div className="bg-[#457575] flex flex-col min-h-screen">
+      <DynamicTitle title="Portfolio | Ethan Key"/>
       <header className="bg-[#000000] flex flex-col items-center justify-center h-48 border-b-2 border-white">
         <Link href="/">
           <h1 className="text-6xl text-[#ffffff] font-bold">Ethan Key</h1>
