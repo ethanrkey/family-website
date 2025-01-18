@@ -58,7 +58,7 @@ export default function Home() {
           </div>
           <div className="ml-16 px-44">
             <p className="text-center pb-10">
-              Bryce is currently a freshman at Columbia University, where he studies Biochemistry and Philosophy and competes on their Swimming and Diving team. Bryce graduated his high school, The Oakridge School, as the Valedictorian of his class. He is an outstanding scholar, earning a 4.96 weighted GPA in high school, scoring a 35 on the ACT, and currently maintaining a 4.0 GPA at Columbia. In his free time, Bryce likes to spend time with friends, read, crochet, sing, and design fashion. 
+              Bryce is currently a freshman at Columbia University, where he studies Biochemistry and Philosophy and competes on their Swimming and Diving team. Bryce graduated his high school, The Oakridge School, as the Valedictorian of his class. He is an outstanding scholar, earning a 4.96 weighted GPA in high school, scoring a 35 on the ACT, and currently maintaining a 4.0 GPA at Columbia. In his free time, Bryce likes to hang out with friends, read, crochet, sing, and design fashion. 
             </p>
           </div>
         </div>
