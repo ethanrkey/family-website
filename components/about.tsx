@@ -8,7 +8,7 @@ export default function About() {
                 {/* Paragraph 1 */}
                 <TypeAnimation
                 sequence={[
-                    "I am a passionate and driven Computer Science student at Boston University, expected to graduate in May 2026. I have a strong foundation in programming, software development, and problem-solving, coupled with a curiosity for learning and applying new technologies. My academic journey has been marked by dedication, determination, and a commitment to achieving excellence in all aspects of my work. I enjoy tackling challenges that have a meaningful impact. I am particularly drawn to projects that intersect technology with real-world usability, finding fulfillment in crafting solutions that improve user experiences and solve practical problems.",
+                    "I am a passionate and driven Computer Science student at Boston University, graduating in May 2026. I have a strong foundation in programming, software development, and problem-solving, coupled with a curiosity for learning and applying new technologies. My academic journey has been marked by dedication, determination, and a commitment to achieving excellence in all aspects of my work. I enjoy tackling challenges that have a meaningful impact. I am particularly drawn to projects that intersect technology with real-world usability, finding fulfillment in crafting solutions that improve user experiences and solve practical problems.",
                 ]}
                 wrapper="p"
                 cursor={true}
