@@ -30,7 +30,7 @@ export default function Projects() {
         {
           title: 'Global Conflict Visualizer',
           description: 'Tool which visualizes various international conflicts from the 20th and 21st centuries',
-          image: 'gcv.png',
+          image: 'gcv3.png',
           github: 'https://github.com/ethanrkey/global-conflict-visualizer',
         },
         {
