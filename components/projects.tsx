@@ -28,6 +28,13 @@ export default function Projects() {
           liveproject: 'https://accessiscan.vercel.app/',
         },
         {
+          title: 'Trivia Game',
+          description: 'A fun trivia game with questions from a variety of categories',
+          image: 'trivia.png',
+          github: 'https://github.com/ethanrkey/cs391-mp-2',
+          liveproject: 'https://cs391triviagame.vercel.app/',
+        },
+        {
           title: 'Global Conflict Visualizer',
           description: 'Tool which visualizes various international conflicts from the 20th and 21st centuries',
           image: 'gcv3.png',
@@ -44,6 +51,13 @@ export default function Projects() {
           description: 'Generate an image from any text description',
           image: 'texttoimage.png',
           github: 'https://github.com/ethanrkey/text-to-image',
+        },
+        {
+          title: 'Resume Website',
+          description: 'My resume as a website',
+          image: 'mp1.png',
+          github: 'https://github.com/ethanrkey/cs391-mp-1',
+          liveproject: 'https://cs391mp1.vercel.app/',
         },
       ];
 
