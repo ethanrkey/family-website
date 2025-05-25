@@ -33,7 +33,7 @@ export default function Home() {
           {/* Ethan Key */}
           <div className="mr-16 px-44">
             <p className="text-center pb-10">
-              Ethan is in his junior year at Boston University. He studies computer science, and aspires to be a software engineer. Ethan has been on the Dean&apos;s List in the 2024 Spring and Fall semesters, maintaining a cumulative GPA of 3.67. Ethan enjoys spending time with his family and friends, setting goals, working out, biking, listening to music, looking at the stock market, and watching various sports.
+              Ethan is a rising senior at Boston University. He studies computer science, and aspires to be a software engineer. Ethan has been on the Dean&apos;s List in the 2024 Spring and Fall semesters, maintaining a cumulative GPA of 3.67. Ethan enjoys spending time with his family and friends, setting goals, working out, biking, listening to music, studying the stock market, and watching various sporting events.
             </p>
           </div>
           <div className="flex flex-col w-full justify-center items-center p-8">
@@ -58,7 +58,7 @@ export default function Home() {
           </div>
           <div className="ml-16 px-44">
             <p className="text-center pb-10">
-              Bryce is currently a freshman at Columbia University, where he studies Biochemistry and Philosophy and competes on the Swimming and Diving team. Bryce graduated his high school, The Oakridge School, as the Valedictorian of his class. He is an outstanding scholar, earning a 4.96 weighted GPA in high school, scoring a 35 on the ACT, and currently maintaining a 4.0 GPA at Columbia. In his free time, Bryce likes to hang out with friends, read, crochet, sing, and design fashion. 
+              Bryce is currently a freshman at Columbia University, where he studies Biochemistry and competes on the Swimming and Diving team. Bryce graduated his high school, The Oakridge School, as the Valedictorian of his class. He is an outstanding scholar, earning a 4.96 weighted GPA in high school, scoring a 35 on the ACT, and currently maintaining a 4.0 GPA at Columbia. In his free time, Bryce likes to hang out with friends, read, crochet, sing, and design fashion. 
             </p>
           </div>
         </div>

@@ -38,7 +38,7 @@ export default function EthanKey() {
   };
 
   return (
-    <div className="bg-[#457575] flex flex-col min-h-screen">
+    <div className="bg-[#3c4f70] flex flex-col min-h-screen">
       <DynamicTitle title="Portfolio | Ethan Key"/>
       <header className="bg-[#000000] flex flex-col items-center justify-center h-48 border-b-2 border-white">
         <Link href="/">
