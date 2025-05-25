@@ -6,10 +6,19 @@ export default function Experience() {
 
     const timelineData = [
         {
+            position: "QA / Software Engineer Intern",
+            company: "Otodata",
+            location: "Montréal, QC, CA",
+            date: "May 2025 - Present",
+            description: [
+                "• 	Created various types of tests for the Neezo Web Portal, which holds clients' tank data and user information",
+            ],
+        },
+        {
             position: "Software Development Research Assistant",
             company: "Human-to-Everything (H2X) Lab",
             location: "Boston, MA",
-            date: "October 2024 - Present",
+            date: "October 2024 - May 2025",
             description: [
                 "• 	Configured 250 real-world maps from nuScenes dataset by transforming OpenStreetMap data in RoadRunner to CARLA supported formats using Linux scripting and Python conversion libraries",
                 "• 	Developed and tested autonomous driving algorithms using the CARLA Python API, simulating urban environments, traffic scenarios, and sensor data to improve accuracy of decision-making models by 15%",

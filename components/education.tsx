@@ -38,7 +38,7 @@ export default function Education() {
             <p className="pl-2 text-[#ffffff]">• Bachelor&apos;s Degree</p>
             <p className="pl-2 text-[#ffffff]">• Major: Computer Science</p>
             <p className="pl-2 text-[#ffffff]">• GPA: 3.67</p>
-            <p className="pl-2 text-[#ffffff]">• Year: Junior</p>
+            <p className="pl-2 text-[#ffffff]">• Year: Senior</p>
             <Link className="pt-6" href="https://www.bu.edu/" target="_blank">
                 <Image className="rounded-full" src="/bu.png" alt="BU" height={350} width={350}></Image>
             </Link>
