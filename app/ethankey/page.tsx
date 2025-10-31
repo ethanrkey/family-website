@@ -38,11 +38,11 @@ export default function EthanKey() {
   };
 
   return (
-    <div className="bg-[#3c4f70] flex flex-col min-h-screen">
+    <div className="bg-[#ffffff] flex flex-col min-h-screen">
       <DynamicTitle title="Portfolio | Ethan Key"/>
-      <header className="bg-[#000000] flex flex-col items-center justify-center h-48 border-b-2 border-white">
+      <header className="bg-[#ffffff] flex flex-col items-center justify-center h-48 border-b-2 border-[#3c4f70]">
         <Link href="/">
-          <h1 className="text-6xl text-[#ffffff] font-bold">Ethan Key</h1>
+          <h1 className="text-6xl text-[#3c4f70] font-bold">Ethan Key</h1>
         </Link>
       </header>
       <div className="flex flex-1">
@@ -150,40 +150,40 @@ export default function EthanKey() {
         <div className="flex flex-1 justify-center">{renderContent()}</div>
       </div>
       
-      <footer className="bg-[#000000] pt-4 flex flex-col border-t-2 border-white">
+      <footer className="bg-[#ffffff] pt-4 flex flex-col border-t-2 border-[#3c4f70]">
         <div className="flex items-center justify-center">
           {contactClicked ? (<a href="https://www.linkedin.com/in/ethan-key/" target="_blank">
             <FaLinkedin size={36} className="fill-[#0f74d9] drop-shadow-2xl transition-transform duration-300 ease-in-out transform hover:scale-150"/>
           </a>
           ) : (
-            <FaLinkedin size={36} className="fill-[#ffffff]"/>
+            <FaLinkedin size={36} className="fill-[#6B7280]"/>
           )}
         </div>
         <div className="flex flex-row items-center justify-center py-3 space-x-5">
           <div>
-            <p className={contactClicked ? "block" : "hidden"}>+1 (817) 287-8935</p>
+            <p className={contactClicked ? "block text-[#3c4f70]" : "hidden"}>+1 (817) 287-8935</p>
           </div>
           <div className="flex flex-row gap-2">
-            <MdLocalPhone size={36} className={contactClicked ? "fill-[#8ccc8b]" : "fill-[#ffffff]"}/>
+            <MdLocalPhone size={36} className={contactClicked ? "fill-[#8ccc8b]" : "fill-[#6B7280]"}/>
             <Button 
               variant="text"
               onClick={() => setContactClicked((prev) => !prev)}
               sx={{
-                color: 'white',
+                color: '#3c4f70',
                 fontFamily: "inherit",
                 textTransform: "none",
                 fontWeight: "bold",
                 '&:hover': {
-                    backgroundColor: '#556968',
+                    backgroundColor: '#b5cef5',
                   },
               }}
             >
                 Contact Me
             </Button>
-            <MdEmail size={36} className={contactClicked ? "fill-[#8ebdb5]" : "fill-[#ffffff]"}/>
+            <MdEmail size={36} className={contactClicked ? "fill-[#8ebdb5]" : "fill-[#6B7280]"}/>
           </div>
           <div>
-            <p className={contactClicked ? "block" : "hidden"}>ethankey@bu.edu</p>
+            <p className={contactClicked ? "block text-[#3c4f70]" : "hidden"}>ethankey@bu.edu</p>
           </div>
         </div>
       </footer>

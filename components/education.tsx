@@ -27,24 +27,26 @@ export default function Education() {
         { image: "/terrier.png", code: "CS320", class: "Concepts of Programming Languages", link: "https://www.bu.edu/academics/cas/courses/cas-cs-320/", },
         { image: "/terrier.png", code: "CS391", class: "Web Application Development", link: "https://www.bu.edu/academics/cas/courses/cas-cs-391/", },
         { image: "/terrier.png", code: "CS440", class: "Introduction to Artificial Intelligence", link: "https://www.bu.edu/academics/cas/courses/cas-cs-440/", },
+        { image: "/terrier.png", code: "CS237", class: "Probability in Computing", link: "https://www.bu.edu/academics/cas/courses/cas-cs-237/", },
+        { image: "/terrier.png", code: "CS412", class: "Full-Stack Application Development", link: "https://www.bu.edu/academics/cas/courses/cas-cs-412/", },
     ];
 
     return (
       <div className="pl-6 flex flex-row w-full">
         <div className="flex flex-col pr-6 pt-8">
-            <h2 className="text-4xl text-[#ffffff] font-bold">Education</h2>
-            <p className="pt-4 pl-2 text-[#ffffff]">• Boston University</p>
-            <p className="pl-2 text-[#ffffff]">• Boston, MA</p>
-            <p className="pl-2 text-[#ffffff]">• Bachelor&apos;s Degree</p>
-            <p className="pl-2 text-[#ffffff]">• Major: Computer Science</p>
-            <p className="pl-2 text-[#ffffff]">• GPA: 3.67</p>
-            <p className="pl-2 text-[#ffffff]">• Year: Senior</p>
+            <h2 className="text-4xl text-[#3c4f70] font-bold">Education</h2>
+            <p className="pt-4 pl-2 text-[#b54e4e]">• Boston University</p>
+            <p className="pl-2 text-[#b54e4e]">• Boston, MA</p>
+            <p className="pl-2 text-[#b54e4e]">• Bachelor&apos;s Degree</p>
+            <p className="pl-2 text-[#b54e4e]">• Major: Computer Science</p>
+            <p className="pl-2 text-[#b54e4e]">• GPA: 3.67</p>
+            <p className="pl-2 text-[#b54e4e]">• Year: Senior</p>
             <Link className="pt-6" href="https://www.bu.edu/" target="_blank">
                 <Image className="rounded-full" src="/bu.png" alt="BU" height={350} width={350}></Image>
             </Link>
         </div>
         <div className="flex w-full flex-col ml-6 px-28">
-            <h2 className="text-3xl text-[#ffffff] flex justify-center pt-8 pb-6">Relevant Classes Taken</h2>
+            <h2 className="text-3xl text-[#3c4f70] flex justify-center pt-8 pb-6">Relevant Classes Taken</h2>
             <div className="grid-container pt-2 pb-16 fade-in">
             {items.map((item, index) => (
                 <div
@@ -67,4 +69,4 @@ export default function Education() {
         </div>
       </div>
     );
-  }
+}

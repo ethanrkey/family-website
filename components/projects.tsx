@@ -28,6 +28,13 @@ export default function Projects() {
           liveproject: 'https://accessiscan.vercel.app/',
         },
         {
+          title: 'Mini Instagram',
+          description: 'A mock instagram Django application in which users can create accounts, make posts, follow other profiles, like other profiles, and view their post feed.',
+          image: 'miniinsta.png',
+          github: 'https://github.com/ethanrkey/cs412/tree/main/mini_insta',
+          liveproject: 'https://cs-webapps.bu.edu/ethankey/mini_insta/',
+        },
+        {
           title: 'Trivia Game',
           description: 'A fun trivia game with questions from a variety of categories',
           image: 'trivia.png',
@@ -45,6 +52,13 @@ export default function Projects() {
           description: 'Paper trading platform to practice stock market strategies',
           image: 'stocktrading.png',
           github: 'https://github.com/ethanrkey/stock-trading-app',
+        },
+        {
+          title: 'Newton Voter Analytics',
+          description: 'A website that shows data from election results in Newton, MA and allows for filtering and visualizing this data.',
+          image: 'voteranalytics.png',
+          github: 'https://github.com/ethanrkey/cs412/tree/main/voter_analytics',
+          liveproject: 'https://cs-webapps.bu.edu/ethankey/voter_analytics/',
         },
         {
           title: 'Text Image Generator',

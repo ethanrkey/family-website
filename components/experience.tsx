@@ -6,12 +6,14 @@ export default function Experience() {
 
     const timelineData = [
         {
-            position: "QA / Software Engineer Intern",
+            position: "Software Engineer Intern",
             company: "Otodata",
-            location: "Montréal, QC, CA",
-            date: "May 2025 - Present",
+            location: "Montréal, QC",
+            date: "May 2025 - August 2025",
             description: [
-                "• 	Created various types of tests for the Neezo Web Portal, which holds clients' tank data and user information",
+                "• 	Developed an FTP reporting feature in the Neevo portal using C# and AngularJS, enabling clients to generate reports for each branch (division) within a company, improving reporting flexibility for tank monitor data",
+                "• 	Resolved 15 defects across UI rendering, translations, object-relationship logic, and API endpoints, reducing recurring support tickets and improving platform stability",
+                "• 	Executed approximately 400 regression test cases during bi-weekly sprints, validating development tasks and filing bug reports to strengthen release quality",
             ],
         },
         {
@@ -20,8 +22,8 @@ export default function Experience() {
             location: "Boston, MA",
             date: "October 2024 - May 2025",
             description: [
-                "• 	Configured 250 real-world maps from nuScenes dataset by transforming OpenStreetMap data in RoadRunner to CARLA supported formats using Linux scripting and Python conversion libraries",
-                "• 	Developed and tested autonomous driving algorithms using the CARLA Python API, simulating urban environments, traffic scenarios, and sensor data to improve accuracy of decision-making models by 15%",
+                "• 	Automated conversion of 250 nuScenes maps into CARLA-supported formats using Linux scripting and Python libraries, streamlining simulation setup",
+                "• 	Designed and tested autonomous driving algorithms using the CARLA Python API, simulating urban traffic and sensor data to improve decision-making model accuracy by 15%",
             ],
         },
         {
@@ -30,10 +32,10 @@ export default function Experience() {
             location: "Boston, MA",
             date: "September 2024 - December 2024",
             description: [
+                "•	Earned the Innovation Award for AccessiScan project, selected by judges at BU's Experiential Learning Expo",
                 "• 	Coordinated research collecting information from 20 professionals and interns who are actively building user-facing software products to determine the most common web accessibility priorities for developers",
                 "• 	Engineered a Chrome extension with a connected REST API using Flask that scans developer's; websites to calculate an accessibility score, identify inaccessible web page elements, and provide feedback on improving compliance with WCAG standards",
                 "• 	Built and deployed a web application enabling users to login via GitHub OAuth, view previous scan results, track accessibility progress, and collaborate via a community board, leveraging a Next.js, Go, and MongoDB stack",
-                "•	Earned the Innovation Award for AccessiScan project, selected by judges at BU's Experiential Learning Expo",
             ],
         },
         {
@@ -42,8 +44,8 @@ export default function Experience() {
             location: "Watertown, MA",
             date: "September 2024 - December 2024",
             description: [
-                "• 	Provided technical support for computing products including laptops, desktops, peripherals, and accessories",
-                "• 	Resolved customer software issues including trouble with operating system performance, application installation, and cloud storage",
+                "• 	Assisted 30+ customers weekly in troubleshooting OS performance, software installation, and cloud storage issues, ensuring quick resolution and improved customer satisfaction",
+                "• 	Guided customers in understanding computing technologies by translating technical concepts into clear, actionable terms to support informed purchasing decisions",
             ],
         },
         {
@@ -81,9 +83,9 @@ export default function Experience() {
                 color: '#fff' 
 
             }}
-            contentArrowStyle={{ borderRight: '7px solid  #ffffff' }}
+            contentArrowStyle={{ borderRight: '7px solid  #3c4f70' }}
             date={item.date}
-            iconStyle={{ background: clickedIndices.includes(index) ? '#8bf0f0' : '#60a8a8', color: '#fff', cursor: 'pointer' }}
+            iconStyle={{ background: clickedIndices.includes(index) ? '#648cd1' : '#3c4f70', color: '#fff', border: '3px solid #3c4f70', cursor: 'pointer' }}
             iconOnClick={() => toggleExpand(index)}
             // icon={<WorkIcon />}
           >
