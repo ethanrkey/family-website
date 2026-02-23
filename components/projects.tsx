@@ -28,6 +28,13 @@ export default function Projects() {
           liveproject: 'https://accessiscan.vercel.app/',
         },
         {
+          title: 'Personal Budgeting App',
+          description: 'A personal budgeting application for tracking income, recurring expenses, and visualizing balance trends',
+          image: 'budgeting.png',
+          github: 'https://github.com/ethanrkey/cs412/tree/main/project',
+          liveproject: 'https://cs-webapps.bu.edu/ethankey/project/',
+        },
+        {
           title: 'Mini Instagram',
           description: 'A mock instagram Django application in which users can create accounts, make posts, follow other profiles, like other profiles, and view their post feed.',
           image: 'miniinsta.png',

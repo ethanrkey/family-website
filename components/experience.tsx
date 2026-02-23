@@ -6,6 +6,24 @@ export default function Experience() {
 
     const timelineData = [
         {
+            position: "CS411 Course Grader",
+            company: "Boston University",
+            location: "Boston, MA",
+            date: "January 2026 - Present",
+            description: [
+                "• 	Grade assignments and provide detailed feedback for students in Software Engineering (CS411) course",
+            ],
+        },
+        {
+            position: "LLM Trainer",
+            company: "Handshake",
+            location: "Boston, MA (remote)",
+            date: "October 2025 - Present",
+            description: [
+                "• 	Train AI models by performing tasks in the HandshakeAI Fellowship program",
+            ],
+        },
+        {
             position: "Software Engineer Intern",
             company: "Otodata",
             location: "Montréal, QC",

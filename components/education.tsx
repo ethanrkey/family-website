@@ -29,6 +29,7 @@ export default function Education() {
         { image: "/terrier.png", code: "CS440", class: "Introduction to Artificial Intelligence", link: "https://www.bu.edu/academics/cas/courses/cas-cs-440/", },
         { image: "/terrier.png", code: "CS237", class: "Probability in Computing", link: "https://www.bu.edu/academics/cas/courses/cas-cs-237/", },
         { image: "/terrier.png", code: "CS412", class: "Full-Stack Application Development", link: "https://www.bu.edu/academics/cas/courses/cas-cs-412/", },
+        { image: "/terrier.png", code: "CS351", class: "Distributed Systems", link: "https://www.bu.edu/academics/cas/courses/cas-cs-351/", },
     ];
 
     return (
