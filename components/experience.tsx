@@ -29,19 +29,19 @@ export default function Experience() {
             location: "Montréal, QC",
             date: "May 2025 - August 2025",
             description: [
-                "• 	Developed an FTP reporting feature in the Neevo portal using C# and AngularJS, enabling clients to generate reports for each branch (division) within a company, improving reporting flexibility for tank monitor data",
-                "• 	Resolved 15 defects across UI rendering, translations, object-relationship logic, and API endpoints, reducing recurring support tickets and improving platform stability",
-                "• 	Executed approximately 400 regression test cases during bi-weekly sprints, validating development tasks and filing bug reports to strengthen release quality",
+                "• 	Developed an FTP reporting feature in the Neevo portal using C# and AngularJS, enabling clients to generate branch-level tank monitor reports",
+                "• 	Resolved 15 defects in UI rendering, translations, object-relationship logic, and API endpoints, reducing recurring support tickets and improving platform stability",
+                "• 	Optimized CI/CD unit test pipeline by identifying and removing redundant mock database initialization, reducing test suite run time from ~60s to under 5s",
             ],
         },
         {
             position: "Software Development Research Assistant",
             company: "Human-to-Everything (H2X) Lab",
             location: "Boston, MA",
-            date: "October 2024 - May 2025",
+            date: "October 2024 - January 2025",
             description: [
-                "• 	Automated conversion of 250 nuScenes maps into CARLA-supported formats using Linux scripting and Python libraries, streamlining simulation setup",
-                "• 	Designed and tested autonomous driving algorithms using the CARLA Python API, simulating urban traffic and sensor data to improve decision-making model accuracy by 15%",
+                "• 	Created 40 CARLA simulation maps by converting real-world nuScenes driving routes from Singapore into detailed road networks using OpenStreetMap and RoadRunner",
+                "• 	Integrated completed maps into the CARLA simulator, validating scene accuracy and preparing simulation viewpoints for autonomous driving research use",
             ],
         },
         {
@@ -51,9 +51,9 @@ export default function Experience() {
             date: "September 2024 - December 2024",
             description: [
                 "•	Earned the Innovation Award for AccessiScan project, selected by judges at BU's Experiential Learning Expo",
-                "• 	Coordinated research collecting information from 20 professionals and interns who are actively building user-facing software products to determine the most common web accessibility priorities for developers",
-                "• 	Engineered a Chrome extension with a connected REST API using Flask that scans developer's; websites to calculate an accessibility score, identify inaccessible web page elements, and provide feedback on improving compliance with WCAG standards",
-                "• 	Built and deployed a web application enabling users to login via GitHub OAuth, view previous scan results, track accessibility progress, and collaborate via a community board, leveraging a Next.js, Go, and MongoDB stack",
+                "• 	Coordinated research with 20 professionals and interns to identify common web accessibility priorities for developers",
+                "• 	Engineered a Chrome extension with a REST API using Flask to scan websites, compute accessibility scores, and identify WCAG compliance issues",
+                "• 	Built and deployed a connected web application with GitHub OAuth, scan history, accessibility progress tracking, and a community discussion board using a Next.js, Go, and MongoDB stack",
             ],
         },
         {
