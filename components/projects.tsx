@@ -21,18 +21,18 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 export default function Projects() {
     const cards = [
         {
-          title: 'AccessiScan',
-          description: 'Chrome extension and connected website for developers to improve the accessiblity of their websites',
-          image: 'accessiscan.png',
-          github: 'https://github.com/AccessiScan-XC475',
-          liveproject: 'https://accessiscan.vercel.app/',
-        },
-        {
           title: 'Personal Budgeting App',
           description: 'A personal budgeting application for tracking income, recurring expenses, and visualizing balance trends',
           image: 'budgeting.png',
           github: 'https://github.com/ethanrkey/cs412/tree/main/project',
           liveproject: 'https://cs-webapps.bu.edu/ethankey/project/',
+        },
+        {
+          title: 'AccessiScan',
+          description: 'Chrome extension and connected website for developers to improve the accessiblity of their websites',
+          image: 'accessiscan.png',
+          github: 'https://github.com/AccessiScan-XC475',
+          liveproject: 'https://accessiscan.vercel.app/',
         },
         {
           title: 'Mini Instagram',
