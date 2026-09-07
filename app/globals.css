@@ -3,21 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #555A5F;
-    --foreground: #ededed;
-  }
-}
+/*
+ * Theme variables (--surface, --surface-raised, --ink, --ink-muted, --accent,
+ * --accent-ink, --rule) are emitted by the plugin in tailwind.config.ts from
+ * lib/colors.ts. :root carries the family theme; routes override with
+ * data-theme="ethan" | "amy" | "bryce".
+ */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--ink);
+  background: var(--surface);
   font-family: "Martel", sans-serif;
 }
 
@@ -42,7 +37,7 @@ body {
   animation: fadeIn 0.5s ease-in forwards;
 }
 
-/* Initially collapsed */
+/* Experience timeline: collapsed bullet list, expands on hover or click */
 .expandable-content {
   max-height: 0;
   overflow: hidden;
@@ -50,64 +45,57 @@ body {
   cursor: pointer;
 }
 
-/* Expand on hover */
 .content:hover .expandable-content {
-  max-height: 1000px; /* Or a large enough value */
+  max-height: 1000px;
 }
 
-/* Stay expanded on click */
 .vertical-timeline-element--work.clicked .expandable-content {
   max-height: 1000px;
 }
 
+/* react-vertical-timeline-component line color */
+.vertical-timeline::before {
+  background: var(--ink) !important;
+}
+
+/* Coursework flip cards (components/education.tsx) */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
-  perspective: 1000px; /* Enables 3D effect */
+  perspective: 1000px;
 }
-
 .square {
   position: relative;
   width: 150px;
   height: 150px;
   transform-style: preserve-3d;
-  transition: transform 0.6s ease-in-out; /* Smooth flipping animation */
+  transition: transform 0.6s ease-in-out;
   cursor: pointer;
 }
-
 .square.flipped {
-  transform: rotateY(-180deg); /* Apply rotation when clicked */
+  transform: rotateY(-180deg);
 }
-
 .front, .back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Hides one side when the other is visible */
+  backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-
 .front {
   background-color: #fff;
   border: 1px solid #ccc;
 }
-
 .front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .back {
   background-color: #f4f4f4;
-  transform: rotateY(180deg); /* Back face starts rotated */
-}
-
-/* Line color */
-.vertical-timeline::before {
-  background: #3c4f70 !important; 
+  transform: rotateY(180deg);
 }
