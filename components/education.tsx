@@ -43,7 +43,7 @@ export default function Education() {
             <p className="pl-2 text-[#b54e4e]">• GPA: 3.65</p>
             <p className="pl-2 text-[#b54e4e]">• Year: Senior</p>
             <Link className="pt-6" href="https://www.bu.edu/" target="_blank">
-                <Image className="rounded-full" src="/bu.png" alt="BU" height={350} width={350}></Image>
+                <Image className="rounded-full" src="/bu.webp" alt="BU" height={350} width={350}></Image>
             </Link>
         </div>
         <div className="flex w-full flex-col ml-6 px-28">

@@ -7,18 +7,18 @@ import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 
 const topPhotos = [
-    { src: "/family1.jpg", width: 600, height: 800 },
-    { src: "/family3.jpg", width: 1000, height: 800 },
-    { src: "/family4.jpg", width: 600, height: 800 },
-    { src: "/family5.jpg", width: 500, height: 800 },
+    { src: "/family1.webp", width: 600, height: 800 },
+    { src: "/family3.webp", width: 1000, height: 800 },
+    { src: "/family4.webp", width: 600, height: 800 },
+    { src: "/family5.webp", width: 500, height: 800 },
 ];
 
 const bottomPhotos = [
-    { src: "/family6.jpg", width: 1000, height: 800 },
-    { src: "/family7.jpg", width: 600, height: 800 },
-    { src: "/family9.jpg", width: 600, height: 800 },
-    { src: "/family8.jpg", width: 600, height: 800 },
-    { src: "/family10.jpg", width: 600, height: 800 },
+    { src: "/family6.webp", width: 1000, height: 800 },
+    { src: "/family7.webp", width: 600, height: 800 },
+    { src: "/family9.webp", width: 600, height: 800 },
+    { src: "/family8.webp", width: 600, height: 800 },
+    { src: "/family10.webp", width: 600, height: 800 },
 ];
 
 export default function AutoSlidingGallery() {

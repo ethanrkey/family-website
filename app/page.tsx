@@ -17,7 +17,7 @@ export default function Home() {
         <div className="flex flex-row items-center justify-between px-16 py-10 my-20 border-b border-t border-[#ffffff]">
           {/* Amy Key */}
           <div className="flex flex-col w-full justify-center items-center p-8">
-            <Avatar alt="Amy Key" src="/mom3.jpg" className="scale-150 border" sx={{ width: 150, height: 150 }}/>
+            <Avatar alt="Amy Key" src="/mom3.webp" className="scale-150 border" sx={{ width: 150, height: 150 }}/>
             <h2 className="text-3xl font-semibold pt-14">Amy Key</h2>
           </div>
           <div className="ml-16 px-44">
@@ -36,7 +36,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col w-full justify-center items-center p-8">
             <Link href="/ethankey">
-                <Avatar alt="Ethan Key" src="/me.jpg" className="scale-150 border" sx={{ width: 150, height: 150,
+                <Avatar alt="Ethan Key" src="/me.webp" className="scale-150 border" sx={{ width: 150, height: 150,
                   transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                   "&:hover": {
                     transform: "scale(1.6)", // Slightly enlarge on hover
@@ -51,7 +51,7 @@ export default function Home() {
         <div className="flex flex-row items-center justify-between px-16 py-10 mt-20 border-b border-t border-[#ffffff]">
           {/* Bryce Key */}
           <div className="flex flex-col w-full justify-center items-center p-8">
-            <Avatar alt="Bryce Key" src="/bryce2.jpg" className="scale-150 border" sx={{ width: 150, height: 150 }}/>
+            <Avatar alt="Bryce Key" src="/bryce2.webp" className="scale-150 border" sx={{ width: 150, height: 150 }}/>
             <h2 className="text-3xl font-semibold pt-14">Bryce Key</h2>
           </div>
           <div className="ml-16 px-44">
