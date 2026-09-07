@@ -8,12 +8,10 @@ import Education from "@/components/education";
 const Projects = dynamic(() => import('@/components/projects'), { ssr: false });
 import Skills from "@/components/skills";
 import About from "@/components/about";
-import Personal from "@/components/personal";
 import { MdLocalPhone } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import dynamic from 'next/dynamic';
-import DynamicTitle from "@/components/browsertitle";
 
 
 export default function EthanKey() {
@@ -30,8 +28,6 @@ export default function EthanKey() {
         return <Projects />;
       case "Skills":
         return <Skills />;
-      case "About2":
-        return <Personal />;
       default:
         return <About />;
     }
@@ -39,7 +35,6 @@ export default function EthanKey() {
 
   return (
     <div className="bg-[#ffffff] flex flex-col min-h-screen">
-      <DynamicTitle title="Portfolio | Ethan Key"/>
       <header className="bg-[#ffffff] flex flex-col items-center justify-center h-48 border-b-2 border-[#3c4f70]">
         <Link href="/">
           <h1 className="text-6xl text-[#3c4f70] font-bold">Ethan Key</h1>
@@ -124,27 +119,6 @@ export default function EthanKey() {
             >
               Skills
             </Button>
-            {/*
-            <Button
-              onClick={() => setActiveSection("About2")}
-              variant="contained"
-              sx={{
-                height: "60px", 
-                width: '150px',
-                fontFamily: "inherit",
-                textTransform: "none",
-                backgroundColor: activeSection === "About2" ? "#B36D6D" : "#a6a6a6",
-                color: 'white',
-                padding: '10px 20px',
-                borderRadius: '12px',
-                '&:hover': {
-                  backgroundColor: '#B36D6D',
-                },
-              }}
-            >
-              Personal
-            </Button>
-            */}
           </Stack>
         </div>
         <div className="flex flex-1 justify-center">{renderContent()}</div>

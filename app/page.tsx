@@ -2,14 +2,12 @@
 import Link from "next/link";
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
-import DynamicTitle from "@/components/browsertitle";
 import PhotoGallery from "@/components/photogallery";
 
 export default function Home() {
   return (
     
     <div className="bg-[#1F2937] text-white min-h-screen">
-      <DynamicTitle title="Key Family"/>
       {/* Hero Section */}
         <h1 className="text-8xl leading-tight text-primary text-center py-6 font-heading border-b-2 border-[#ffffff]">Key Family</h1>
         <div className="bg-[#687a94]">
