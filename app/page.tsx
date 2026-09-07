@@ -1,98 +1,65 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import Experience from "@/components/experience";
-import Education from "@/components/education";
-const Projects = dynamic(() => import('@/components/projects'), { ssr: false });
-import Skills from "@/components/skills";
-import About from "@/components/about";
-import { MdEmail } from "react-icons/md";
-import { FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
-import dynamic from 'next/dynamic';
-import { profile } from "@/content/profile";
+import Nav from "@/components/ui/Nav";
+import Hero from "@/components/ui/Hero";
+import Container from "@/components/ui/Container";
+import Portrait from "@/components/ui/Portrait";
+import Button from "@/components/ui/Button";
+import Section from "@/components/ui/Section";
+import Gallery from "@/components/ui/Gallery";
+import Footer from "@/components/ui/Footer";
+import { familyName, tagline, members, galleryTop, galleryBottom } from "@/content/family";
 
-// MUI sx reads the theme's CSS variables so the shell follows data-theme.
-const tabSx = (active: boolean) => ({
-  height: "60px",
-  width: "150px",
-  fontFamily: "inherit",
-  textTransform: "none" as const,
-  backgroundColor: active ? "var(--accent)" : "var(--surface-raised)",
-  color: active ? "var(--accent-ink)" : "var(--ink)",
-  padding: "10px 20px",
-  borderRadius: "12px",
-  "&:hover": {
-    backgroundColor: "var(--accent)",
-    color: "var(--accent-ink)",
-  },
-});
-
-export default function EthanKey() {
-  const [activeSection, setActiveSection] = useState("");
-
-  const renderContent = () => {
-    switch (activeSection) {
-      case "Experience":
-        return <Experience />;
-      case "Education":
-        return <Education />;
-      case "Projects":
-        return <Projects />;
-      case "Skills":
-        return <Skills />;
-      default:
-        return <About />;
-    }
-  };
+export default function HomePage() {
+  const navLinks = [
+    ...members.map((m) => ({ href: `#${m.slug}`, label: m.firstName })),
+    { href: "#photos", label: "Photos" },
+  ];
 
   return (
-    <div className="bg-surface text-ink flex flex-col min-h-screen">
-      <header className="flex flex-col items-center justify-center h-48 border-b-2 border-rule">
-        <Link href="/">
-          <h1 className="text-6xl text-ink font-bold">{profile.name}</h1>
-        </Link>
-      </header>
-      <div className="flex flex-1">
-        <div className="flex justify-center w-1/5 py-16">
-          <Stack spacing={3} direction="column">
-            <Button onClick={() => setActiveSection("Experience")} variant="contained" sx={tabSx(activeSection === "Experience")}>
-              Experience
-            </Button>
-            <Button onClick={() => setActiveSection("Education")} variant="contained" sx={tabSx(activeSection === "Education")}>
-              Education
-            </Button>
-            <Button onClick={() => setActiveSection("Projects")} variant="contained" sx={tabSx(activeSection === "Projects")}>
-              Projects
-            </Button>
-            <Button onClick={() => setActiveSection("Skills")} variant="contained" sx={tabSx(activeSection === "Skills")}>
-              Skills
-            </Button>
-          </Stack>
-        </div>
-        <div className="flex flex-1 justify-center">{renderContent()}</div>
-      </div>
+    <div data-theme="family" className="min-h-screen bg-surface text-ink">
+      <Nav brand={{ label: familyName, href: "/" }} links={navLinks} />
 
-      <footer className="py-6 flex flex-col items-center gap-4 border-t-2 border-rule">
-        <div className="flex flex-row items-center justify-center gap-8">
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
-            <FaLinkedin size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
-          </a>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-            <FaGithub size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
-          </a>
-          <a href={`mailto:${profile.email}`} aria-label={`Email ${profile.email}`} title={profile.email}>
-            <MdEmail size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
-          </a>
-          {profile.resumeUrl && (
-            <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" aria-label="Résumé (PDF)" title="Résumé">
-              <FaFilePdf size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
-            </a>
-          )}
-        </div>
-        <a href={`mailto:${profile.email}`} className="text-ink hover:underline">{profile.email}</a>
-      </footer>
+      <main id="main">
+        <Hero title={familyName} identity={tagline} align="center" />
+
+        {members.map((m, i) => {
+          const headingId = `${m.slug}-title`;
+          return (
+            <section
+              key={m.slug}
+              id={m.slug}
+              aria-labelledby={headingId}
+              className="border-b border-rule py-section-sm md:py-section"
+            >
+              <Container
+                className={`flex flex-col items-center gap-8 text-center md:items-center md:gap-14 md:text-left ${
+                  i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
+                }`}
+              >
+                <Portrait src={m.photo} alt={m.name} size="xl" />
+                <div className="max-w-prose">
+                  <h2 id={headingId} className="text-4xl md:text-5xl">
+                    {m.name}
+                  </h2>
+                  <p className="mt-2 text-lg text-ink-muted">{m.identity}</p>
+                  <p className="mt-5 text-lg leading-relaxed">{m.bio}</p>
+                  <Button href={m.href} className="mt-7">
+                    Visit {m.firstName}&rsquo;s page <span aria-hidden="true">→</span>
+                  </Button>
+                </div>
+              </Container>
+            </section>
+          );
+        })}
+
+        <Section id="photos" title="Photos">
+          <div className="space-y-6">
+            <Gallery photos={galleryTop} label="Family photos, row one" />
+            <Gallery photos={galleryBottom} label="Family photos, row two" />
+          </div>
+        </Section>
+      </main>
+
+      <Footer note={`© ${new Date().getFullYear()} ${familyName}`} />
     </div>
   );
 }
