@@ -4,11 +4,13 @@ Personal site for the Key family, deployed at [keyfamily.vercel.app](https://key
 
 - `/` — family homepage
 - `/ethankey` — Ethan's portfolio
+- `/amykey`, `/brycekey` — person pages (shared `PersonPage` skeleton)
 
 ## Stack
 
 - [Next.js 15](https://nextjs.org) (App Router) · React 19 · TypeScript
 - Tailwind CSS 3 — themed via semantic CSS variables (see Theming)
+- react-icons for iconography; no other UI libraries
 - Deployed on Vercel via the GitHub integration (no `vercel.json`; pushes to `main` deploy)
 
 ## Where things live
@@ -16,10 +18,13 @@ Personal site for the Key family, deployed at [keyfamily.vercel.app](https://key
 | Path | Purpose |
 |---|---|
 | `app/` | Routes, root layout, global CSS |
-| `components/` | Section components (render only — no copy) |
+
 | `content/` | **All site copy as typed data.** Bios, experience, projects, skills, education, contact links. Edit here, not in components. |
 | `content/types.ts` | Shared types for the data modules |
-| `lib/colors.ts` | Palette + per-theme semantic tokens (the only place a hex belongs) |
+| `lib/theme.ts` | Palette + per-theme semantic tokens: colors, fonts, radius (the only place a hex belongs) |
+| `components/ui/` | Shared primitives — Section, Card, Tag, IconLink, Button, Nav, Timeline, Hero, Gallery, Footer, Portrait, Decor |
+| `components/portfolio/` | Sections of Ethan's portfolio page |
+| `components/PersonPage.tsx` | Shared skeleton for /amykey and /brycekey |
 | `public/` | Images (WebP, ≤2000px) |
 
 ## Updating content
@@ -29,10 +34,12 @@ GPA, or email, edit the relevant data file — components map over the arrays an
 
 ## Theming
 
-Four themes share one semantic token set: `--surface`, `--surface-raised`, `--ink`, `--ink-muted`,
-`--accent`, `--accent-ink`, `--rule`. `lib/colors.ts` defines the values per theme; a Tailwind plugin
-in `tailwind.config.ts` emits them as CSS variables (`:root` = family, `[data-theme="ethan|amy|bryce"]`
-overrides) and maps utilities onto them — `bg-surface`, `text-ink`, `border-rule`, `bg-accent`, etc.
+Four themes share one semantic token set: colors (`--surface`, `--surface-raised`, `--ink`, `--ink-muted`,
+`--accent`, `--accent-ink`, `--rule`), fonts (`--font-display`, `--font-heading`, `--font-body`) and
+`--radius`. `lib/theme.ts` defines the values per theme; a Tailwind plugin in `tailwind.config.ts` emits
+them as CSS variables (`:root` = family, `[data-theme="ethan|amy|bryce"]` overrides) and maps utilities
+onto them — `bg-surface`, `text-ink`, `border-rule`, `font-heading`, `rounded-theme`, etc. The type and
+spacing scales also live in `tailwind.config.ts`; components use those steps, never arbitrary values.
 
 Each route sets `data-theme` on its top-level wrapper. Components use semantic utilities only and never
 know whose page they are on. Every text/background pair must clear WCAG AA (4.5:1).

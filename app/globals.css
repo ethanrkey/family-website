@@ -1,59 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Martel:wght@200;300;400;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /*
  * Theme variables (--surface, --surface-raised, --ink, --ink-muted, --accent,
- * --accent-ink, --rule) are emitted by the plugin in tailwind.config.ts from
- * lib/colors.ts. :root carries the family theme; routes override with
- * data-theme="ethan" | "amy" | "bryce".
+ * --accent-ink, --rule, --font-display, --font-heading, --font-body, --radius)
+ * are emitted by the plugin in tailwind.config.ts from lib/theme.ts.
+ * :root carries the family theme; routes override with data-theme.
  */
 
-body {
-  color: var(--ink);
-  background: var(--surface);
-  font-family: "Martel", sans-serif;
-}
-
-.font-heading {
-  font-family: "Marck Script";
-}
-
-.font-body {
-  font-family: "Martel", serif;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-  to {
-    opacity: 1;
+
+  body {
+    @apply bg-surface text-ink font-body antialiased;
+  }
+
+  /* Anchored sections clear the sticky nav (which may wrap to two rows on narrow screens) */
+  [id] {
+    scroll-margin-top: calc(theme(spacing.nav) * 2);
+  }
+  @screen md {
+    [id] {
+      scroll-margin-top: calc(theme(spacing.nav) + 1rem);
+    }
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading text-ink;
+    text-wrap: balance;
+  }
+
+  /* Per-theme voice: Bryce is tight and bold; Amy breathes. */
+  [data-theme="bryce"] :is(h1, h2, h3) {
+    @apply font-bold tracking-display;
+  }
+  [data-theme="amy"] p {
+    @apply leading-loose;
+  }
+
+  /* Visible focus for keyboard users, on every theme */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-.fade-in {
-  animation: fadeIn 0.5s ease-in forwards;
-}
-
-/* Experience timeline: collapsed bullet list, expands on hover or click */
-.expandable-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-in-out;
-  cursor: pointer;
-}
-
-.content:hover .expandable-content {
-  max-height: 1000px;
-}
-
-.vertical-timeline-element--work.clicked .expandable-content {
-  max-height: 1000px;
-}
-
-/* react-vertical-timeline-component line color */
-.vertical-timeline::before {
-  background: var(--ink) !important;
+@layer utilities {
+  /* Horizontal scroll-snap track (Gallery) */
+  .snap-track {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .snap-track::-webkit-scrollbar {
+    display: none;
+  }
 }
