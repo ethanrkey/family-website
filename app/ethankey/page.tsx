@@ -1,98 +1,62 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import Experience from "@/components/experience";
-import Education from "@/components/education";
-const Projects = dynamic(() => import('@/components/projects'), { ssr: false });
-import Skills from "@/components/skills";
-import About from "@/components/about";
+import type { Metadata } from "next";
+import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
-import dynamic from 'next/dynamic';
+import Nav from "@/components/ui/Nav";
+import Hero from "@/components/ui/Hero";
+import IconLink from "@/components/ui/IconLink";
+import Footer from "@/components/ui/Footer";
+import ExperienceSection from "@/components/portfolio/ExperienceSection";
+import ProjectsSection from "@/components/portfolio/ProjectsSection";
+import SkillsSection from "@/components/portfolio/SkillsSection";
+import EducationSection from "@/components/portfolio/EducationSection";
 import { profile } from "@/content/profile";
 
-// MUI sx reads the theme's CSS variables so the shell follows data-theme.
-const tabSx = (active: boolean) => ({
-  height: "60px",
-  width: "150px",
-  fontFamily: "inherit",
-  textTransform: "none" as const,
-  backgroundColor: active ? "var(--accent)" : "var(--surface-raised)",
-  color: active ? "var(--accent-ink)" : "var(--ink)",
-  padding: "10px 20px",
-  borderRadius: "12px",
-  "&:hover": {
-    backgroundColor: "var(--accent)",
-    color: "var(--accent-ink)",
+export const metadata: Metadata = {
+  title: { absolute: `${profile.name} | Software Engineer` },
+  description: profile.summary,
+  openGraph: {
+    type: "profile",
+    title: `${profile.name} | Software Engineer`,
+    description: profile.identity,
+    url: "/ethankey",
+    images: [{ url: "/me.webp", width: 1170, height: 1368, alt: profile.name }],
   },
-});
+};
 
-export default function EthanKey() {
-  const [activeSection, setActiveSection] = useState("");
+const NAV = [
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#skills", label: "Skills" },
+  { href: "#education", label: "Education" },
+];
 
-  const renderContent = () => {
-    switch (activeSection) {
-      case "Experience":
-        return <Experience />;
-      case "Education":
-        return <Education />;
-      case "Projects":
-        return <Projects />;
-      case "Skills":
-        return <Skills />;
-      default:
-        return <About />;
-    }
-  };
+export default function EthanKeyPage() {
+  const contact = (
+    <>
+      <IconLink href={profile.github} label="GitHub" icon={FaGithub} showLabel />
+      <IconLink href={profile.linkedin} label="LinkedIn" icon={FaLinkedin} showLabel />
+      <IconLink href={`mailto:${profile.email}`} label="Email" icon={MdEmail} showLabel />
+      {profile.resumeUrl && <IconLink href={profile.resumeUrl} label="Résumé" icon={FaFilePdf} showLabel />}
+    </>
+  );
 
   return (
-    <div className="bg-surface text-ink flex flex-col min-h-screen">
-      <header className="flex flex-col items-center justify-center h-48 border-b-2 border-rule">
-        <Link href="/">
-          <h1 className="text-6xl text-ink font-bold">{profile.name}</h1>
-        </Link>
-      </header>
-      <div className="flex flex-1">
-        <div className="flex justify-center w-1/5 py-16">
-          <Stack spacing={3} direction="column">
-            <Button onClick={() => setActiveSection("Experience")} variant="contained" sx={tabSx(activeSection === "Experience")}>
-              Experience
-            </Button>
-            <Button onClick={() => setActiveSection("Education")} variant="contained" sx={tabSx(activeSection === "Education")}>
-              Education
-            </Button>
-            <Button onClick={() => setActiveSection("Projects")} variant="contained" sx={tabSx(activeSection === "Projects")}>
-              Projects
-            </Button>
-            <Button onClick={() => setActiveSection("Skills")} variant="contained" sx={tabSx(activeSection === "Skills")}>
-              Skills
-            </Button>
-          </Stack>
-        </div>
-        <div className="flex flex-1 justify-center">{renderContent()}</div>
-      </div>
+    <div data-theme="ethan" className="min-h-screen bg-surface text-ink">
+      <Nav brand={{ label: profile.name, href: "/" }} links={NAV} />
 
-      <footer className="py-6 flex flex-col items-center gap-4 border-t-2 border-rule">
-        <div className="flex flex-row items-center justify-center gap-8">
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
-            <FaLinkedin size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
-          </a>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-            <FaGithub size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
-          </a>
-          <a href={`mailto:${profile.email}`} aria-label={`Email ${profile.email}`} title={profile.email}>
-            <MdEmail size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
-          </a>
-          {profile.resumeUrl && (
-            <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" aria-label="Résumé (PDF)" title="Résumé">
-              <FaFilePdf size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
-            </a>
-          )}
-        </div>
-        <a href={`mailto:${profile.email}`} className="text-ink hover:underline">{profile.email}</a>
-      </footer>
+      <main id="main">
+        <Hero title={profile.name} identity={profile.identity} summary={profile.summary}>
+          {contact}
+        </Hero>
+        <ExperienceSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <EducationSection />
+      </main>
+
+      <Footer backHref="/" backLabel="Key Family" note={profile.email}>
+        {contact}
+      </Footer>
     </div>
   );
 }

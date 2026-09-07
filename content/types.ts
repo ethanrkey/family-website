@@ -1,32 +1,37 @@
 import type { IconType } from "react-icons";
-import type { ThemeName } from "@/lib/colors";
+import type { ThemeName } from "@/lib/theme";
 
-export interface ExperienceEntry {
-  position: string;
-  company: string;
-  location: string;
-  employmentType?: "Full-time" | "Part-time" | "Contract" | "Internship" | "Volunteer";
-  /** Display string, e.g. "Jun 2026 – Present" */
-  dates: string;
+/** One row in a Timeline — a job, a fellowship, a degree. */
+export interface TimelineEntry {
+  /** Role or degree */
+  title: string;
+  /** Employer or school */
+  org: string;
+  location?: string;
+  /** Employment type or other short qualifier, e.g. "Contract", "Remote" */
+  meta?: string;
+  /** Display string, e.g. "Jun 2026 – Present". Omit if unknown. */
+  dates?: string;
   /** Plain sentences — no bullet glyphs; the component renders the list. */
-  bullets: string[];
+  bullets?: string[];
 }
 
 export interface Project {
   title: string;
+  /** One line */
   description: string;
   /** Absolute public path, e.g. "/budgeting.webp" */
   image: string;
   github: string;
   /** Omit when there is no deployed demo — the card renders repo-only. */
   live?: string;
+  /** Tech tags shown as a Tag row */
+  tags: string[];
 }
 
 export interface Skill {
   name: string;
-  icon: IconType;
-  /** Tailwind hover class for the brand color, e.g. "hover:fill-[#387eb0]" */
-  hoverClass: string;
+  icon?: IconType;
 }
 
 export interface SkillGroup {
@@ -44,21 +49,9 @@ export interface Education {
   /** Display string, e.g. "Graduated May 2026" */
   dates: string;
   gpa: string;
-  /** One short line of highlights, rendered as a comma-separated sentence. */
+  honors: string[];
+  /** One short line of highlights, rendered comma-separated. */
   courseworkHighlights: string[];
-}
-
-export interface FamilyMember {
-  name: string;
-  /** Route segment for this member's subpage, e.g. "amy" → /amy */
-  slug: string;
-  /** data-theme value that member's route sets */
-  theme: ThemeName;
-  /** Absolute public path to the portrait */
-  photo: string;
-  bio: string;
-  /** Internal route to this member's subpage — set once the page exists. */
-  href?: string;
 }
 
 export interface FamilyPhoto {
@@ -66,21 +59,42 @@ export interface FamilyPhoto {
   alt: string;
 }
 
-export interface ContactLink {
-  label: string;
+/** The personality section on a person page — differs per member. */
+export interface Feature {
+  title: string;
+  paragraphs: string[];
+  photos?: FamilyPhoto[];
+}
+
+export interface FamilyMember {
+  name: string;
+  firstName: string;
+  /** Route segment, e.g. "amykey" → /amykey */
+  slug: string;
+  /** data-theme value that member's route sets */
+  theme: ThemeName;
+  /** Absolute public path to the portrait */
+  photo: string;
+  /** One-line identity under the name, e.g. "Registered Nurse · Mansfield, Texas" */
+  identity: string;
+  bio: string;
+  /** Internal route to this member's page */
   href: string;
-  /** Rendered as an accessible name on icon-only links */
-  ariaLabel?: string;
+  /** Person-page sections (Ethan's portfolio renders its own content instead) */
+  timeline?: TimelineEntry[];
+  highlights?: string[];
+  feature?: Feature;
 }
 
 export interface Profile {
   name: string;
-  /** Short headline sentence; typed out on the About tab. */
-  headline: string;
-  about: string;
+  /** One-line identity under the h1 */
+  identity: string;
+  /** Hero copy — two sentences max */
+  summary: string;
   email: string;
   linkedin: string;
   github: string;
-  /** Absolute public path to a résumé PDF. Leave undefined until the file exists. */
+  /** Absolute public path to a résumé PDF */
   resumeUrl?: string;
 }

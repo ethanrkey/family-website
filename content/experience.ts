@@ -1,40 +1,40 @@
-import type { ExperienceEntry } from "./types";
+import type { TimelineEntry } from "./types";
 
 /** Newest first. */
-export const experience: ExperienceEntry[] = [
+export const experience: TimelineEntry[] = [
   {
-    position: "Software Engineer 1",
-    company: "Raytheon",
+    title: "Software Engineer 1",
+    org: "Raytheon",
     location: "Fort Wayne, IN",
-    employmentType: "Full-time",
+    meta: "Full-time",
     dates: "Jun 2026 – Present",
     bullets: ["Developing an AI prompt library for software engineers"],
   },
   {
-    position: "CS411 Course Grader",
-    company: "Boston University",
+    title: "CS411 Course Grader",
+    org: "Boston University",
     location: "Boston, MA",
-    employmentType: "Part-time",
+    meta: "Part-time",
     dates: "Jan 2026 – May 2026",
     bullets: [
       "Graded assignments and provided detailed feedback for students in the Software Engineering (CS411) course",
     ],
   },
   {
-    position: "LLM Trainer",
-    company: "Handshake",
+    title: "LLM Trainer",
+    org: "Handshake",
     location: "Remote",
-    employmentType: "Contract",
+    meta: "Contract",
     dates: "Oct 2025 – May 2026",
     bullets: [
       "Trained AI models by performing tasks in the HandshakeAI Fellowship program",
     ],
   },
   {
-    position: "Software Engineer Intern",
-    company: "Otodata",
+    title: "Software Engineer Intern",
+    org: "Otodata",
     location: "Montréal, QC (Remote)",
-    employmentType: "Internship",
+    meta: "Internship",
     dates: "May 2025 – Aug 2025",
     bullets: [
       "Developed an FTP reporting feature in the Neevo portal using C# and AngularJS, enabling clients to generate branch-level tank monitor reports",
@@ -43,8 +43,8 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    position: "Software Development Research Assistant",
-    company: "Human-to-Everything (H2X) Lab",
+    title: "Software Development Research Assistant",
+    org: "Human-to-Everything (H2X) Lab",
     location: "Boston, MA",
     dates: "Oct 2024 – Jan 2025",
     bullets: [
@@ -53,8 +53,8 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    position: "Software Engineer Fellow",
-    company: "BU Spark!",
+    title: "Software Engineer Fellow",
+    org: "BU Spark!",
     location: "Boston, MA",
     dates: "Sep 2024 – Dec 2024",
     bullets: [
@@ -65,10 +65,10 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    position: "Computing Department Associate",
-    company: "Best Buy",
+    title: "Computing Department Associate",
+    org: "Best Buy",
     location: "Watertown, MA",
-    employmentType: "Part-time",
+    meta: "Part-time",
     dates: "Sep 2024 – Dec 2024",
     bullets: [
       "Assisted 30+ customers weekly in troubleshooting OS performance, software installation, and cloud storage issues, ensuring quick resolution and improved customer satisfaction",
@@ -76,8 +76,8 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    position: "Junior Development Team",
-    company: "Hack4Impact",
+    title: "Junior Development Team",
+    org: "Hack4Impact",
     location: "Boston, MA",
     dates: "Jan 2024 – May 2024",
     bullets: [

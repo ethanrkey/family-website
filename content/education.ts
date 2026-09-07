@@ -9,6 +9,7 @@ export const education: Education = {
   major: "Computer Science",
   dates: "Graduated May 2026",
   gpa: "3.59", // the one and only place GPA appears on the site
+  honors: ["Dean's List"],
   courseworkHighlights: [
     "Software Engineering",
     "Full-Stack Application Development",
