@@ -1,6 +1,5 @@
 "use client"
 import Card from '@mui/material/Card';
-// import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
@@ -8,7 +7,6 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
-// import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
@@ -17,105 +15,43 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import OutboundIcon from '@mui/icons-material/Outbound';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { projects } from '@/content/projects';
+
+const DarkTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.common.black,
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.black,
+  },
+}));
 
 export default function Projects() {
-    const cards = [
-        {
-          title: 'Personal Budgeting App',
-          description: 'A personal budgeting application for tracking income, recurring expenses, and visualizing balance trends',
-          image: '/budgeting.webp',
-          github: 'https://github.com/ethanrkey/cs412/tree/main/project',
-          liveproject: 'https://cs-webapps.bu.edu/ethankey/project/',
-        },
-        {
-          title: 'AccessiScan',
-          description: 'Chrome extension and connected website for developers to improve the accessiblity of their websites',
-          image: '/accessiscan.webp',
-          github: 'https://github.com/AccessiScan-XC475',
-          liveproject: 'https://accessiscan.vercel.app/',
-        },
-        {
-          title: 'Mini Instagram',
-          description: 'A mock instagram Django application in which users can create accounts, make posts, follow other profiles, like other profiles, and view their post feed.',
-          image: '/miniinsta.webp',
-          github: 'https://github.com/ethanrkey/cs412/tree/main/mini_insta',
-          liveproject: 'https://cs-webapps.bu.edu/ethankey/mini_insta/',
-        },
-        {
-          title: 'Trivia Game',
-          description: 'A fun trivia game with questions from a variety of categories',
-          image: '/trivia.webp',
-          github: 'https://github.com/ethanrkey/cs391-mp-2',
-          liveproject: 'https://cs391triviagame.vercel.app/',
-        },
-        {
-          title: 'Global Conflict Visualizer',
-          description: 'Tool which visualizes various international conflicts from the 20th and 21st centuries',
-          image: '/gcv3.webp',
-          github: 'https://github.com/ethanrkey/global-conflict-visualizer',
-        },
-        {
-          title: 'Stock Trading Simulator',
-          description: 'Paper trading platform to practice stock market strategies',
-          image: '/stocktrading.webp',
-          github: 'https://github.com/ethanrkey/stock-trading-app',
-        },
-        {
-          title: 'Newton Voter Analytics',
-          description: 'A website that shows data from election results in Newton, MA and allows for filtering and visualizing this data.',
-          image: '/voteranalytics.webp',
-          github: 'https://github.com/ethanrkey/cs412/tree/main/voter_analytics',
-          liveproject: 'https://cs-webapps.bu.edu/ethankey/voter_analytics/',
-        },
-        {
-          title: 'Text Image Generator',
-          description: 'Generate an image from any text description',
-          image: '/texttoimage.webp',
-          github: 'https://github.com/ethanrkey/text-to-image',
-        },
-        {
-          title: 'Resume Website',
-          description: 'My resume as a website',
-          image: '/mp1.webp',
-          github: 'https://github.com/ethanrkey/cs391-mp-1',
-          liveproject: 'https://cs391mp1.vercel.app/',
-        },
-      ];
-
-      const DarkTooltip = styled(({ className, ...props }: TooltipProps) => (
-        <Tooltip {...props} arrow classes={{ popper: className }} />
-      ))(({ theme }) => ({
-        [`& .${tooltipClasses.arrow}`]: {
-          color: theme.palette.common.black,
-        },
-        [`& .${tooltipClasses.tooltip}`]: {
-          backgroundColor: theme.palette.common.black,
-        },
-      }));
-      
     return (
       <div style={{ transform: "scale(.9)", paddingBottom: "40px"}} className="fade-in">
         <Swiper
       effect={'coverflow'}
       style={{ maxWidth: '495px', margin: '0 auto' }}
-      modules={[Navigation, Pagination, EffectCoverflow]} // Register navigation
+      modules={[Navigation, Pagination, EffectCoverflow]}
       navigation
       pagination={{ clickable: true, el: ".pagination-dots" }}
       loop={true}
       spaceBetween={20}
-      slidesPerView={1} // Adjust for responsiveness
+      slidesPerView={1}
       observer={true}
       observeParents={true}
       centeredSlides={true}
     >
-      {cards.map((card, index) => (
-        <SwiperSlide key={index}>
+      {projects.map((card) => (
+        <SwiperSlide key={card.title}>
           <Card sx={{ width: '495px', height: '675px' }}>
             <CardMedia
               component="img"
               height="140"
               image={card.image}
-              alt={card.title}
+              alt={`${card.title} screenshot`}
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -126,18 +62,18 @@ export default function Projects() {
               </Typography>
             </CardContent>
             <CardActions sx={{position: "absolute", bottom: 4, left: 4}}>
-              <a href={card.github} target="_blank">
+              <a href={card.github} target="_blank" rel="noopener noreferrer" aria-label={`${card.title} on GitHub`}>
                 <DarkTooltip title="GitHub Repository">
                   <IconButton>
-                    <GitHubIcon sx={{color: "#000000", fontSize: 45}}/>
+                    <GitHubIcon sx={{ color: "var(--ink)", fontSize: 45 }}/>
                   </IconButton>
                 </DarkTooltip>
               </a>
-              {card.liveproject && (
-                <a href={card.liveproject} target="_blank">
+              {card.live && (
+                <a href={card.live} target="_blank" rel="noopener noreferrer" aria-label={`${card.title} live demo`}>
                 <DarkTooltip title="Deployed Project">
                   <IconButton>
-                    <OutboundIcon sx={{color: "#000000", fontSize: 50}}/>
+                    <OutboundIcon sx={{ color: "var(--ink)", fontSize: 50 }}/>
                   </IconButton>
                 </DarkTooltip>
               </a>
@@ -148,7 +84,7 @@ export default function Projects() {
       ))}
       <div className="pagination-dots flex justify-center pt-5"></div>
     </Swiper>
-    
+
     </div>
     );
 }

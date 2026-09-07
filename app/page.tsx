@@ -1,71 +1,98 @@
-"use client"
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import PhotoGallery from "@/components/photogallery";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import Experience from "@/components/experience";
+import Education from "@/components/education";
+const Projects = dynamic(() => import('@/components/projects'), { ssr: false });
+import Skills from "@/components/skills";
+import About from "@/components/about";
+import { MdEmail } from "react-icons/md";
+import { FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
+import dynamic from 'next/dynamic';
+import { profile } from "@/content/profile";
 
-export default function Home() {
+// MUI sx reads the theme's CSS variables so the shell follows data-theme.
+const tabSx = (active: boolean) => ({
+  height: "60px",
+  width: "150px",
+  fontFamily: "inherit",
+  textTransform: "none" as const,
+  backgroundColor: active ? "var(--accent)" : "var(--surface-raised)",
+  color: active ? "var(--accent-ink)" : "var(--ink)",
+  padding: "10px 20px",
+  borderRadius: "12px",
+  "&:hover": {
+    backgroundColor: "var(--accent)",
+    color: "var(--accent-ink)",
+  },
+});
+
+export default function EthanKey() {
+  const [activeSection, setActiveSection] = useState("");
+
+  const renderContent = () => {
+    switch (activeSection) {
+      case "Experience":
+        return <Experience />;
+      case "Education":
+        return <Education />;
+      case "Projects":
+        return <Projects />;
+      case "Skills":
+        return <Skills />;
+      default:
+        return <About />;
+    }
+  };
+
   return (
-    
-    <div className="bg-[#1F2937] text-white min-h-screen">
-      {/* Hero Section */}
-        <h1 className="text-8xl leading-tight text-primary text-center py-6 font-heading border-b-2 border-[#ffffff]">Key Family</h1>
-        <div className="bg-[#687a94]">
-          <p className="text-4xl leading-tight text-primary text-center pt-16">Dedicated. Resilient. Determined.</p>
-          
-        {/* Family Members Section */}
-        <div className="flex flex-row items-center justify-between px-16 py-10 my-20 border-b border-t border-[#ffffff]">
-          {/* Amy Key */}
-          <div className="flex flex-col w-full justify-center items-center p-8">
-            <Avatar alt="Amy Key" src="/mom3.webp" className="scale-150 border" sx={{ width: 150, height: 150 }}/>
-            <h2 className="text-3xl font-semibold pt-14">Amy Key</h2>
-          </div>
-          <div className="ml-16 px-44">
-            <p className="text-center pb-10">
-              Amy is a Registered Nurse, Medical Claim Assessor, and Yoga Instructor. She graduated from the UT Arlington College of Nursing in 1995, earning a Bachelor of Science in Nursing. Amy is a mother to two sons, Ethan and Bryce, and two dogs, Gigi and Geoffrey. She enjoys spending time with her sons, her dogs, and her best friends, &quot;the Beavers&quot;. Amy is a lifelong Texan, born and raised in DFW.
-            </p>
-          </div>
+    <div className="bg-surface text-ink flex flex-col min-h-screen">
+      <header className="flex flex-col items-center justify-center h-48 border-b-2 border-rule">
+        <Link href="/">
+          <h1 className="text-6xl text-ink font-bold">{profile.name}</h1>
+        </Link>
+      </header>
+      <div className="flex flex-1">
+        <div className="flex justify-center w-1/5 py-16">
+          <Stack spacing={3} direction="column">
+            <Button onClick={() => setActiveSection("Experience")} variant="contained" sx={tabSx(activeSection === "Experience")}>
+              Experience
+            </Button>
+            <Button onClick={() => setActiveSection("Education")} variant="contained" sx={tabSx(activeSection === "Education")}>
+              Education
+            </Button>
+            <Button onClick={() => setActiveSection("Projects")} variant="contained" sx={tabSx(activeSection === "Projects")}>
+              Projects
+            </Button>
+            <Button onClick={() => setActiveSection("Skills")} variant="contained" sx={tabSx(activeSection === "Skills")}>
+              Skills
+            </Button>
+          </Stack>
         </div>
-
-        <div className="flex flex-row items-center justify-between px-16 py-10 my-20 border-b border-t border-[#ffffff]">
-          {/* Ethan Key */}
-          <div className="mr-16 px-44">
-            <p className="text-center pb-10">
-              Ethan is a rising senior at Boston University. He studies computer science, and aspires to be a software engineer. Ethan has been on the Dean&apos;s List in the 2024 Spring and Fall semesters, maintaining a cumulative GPA of 3.67. Ethan enjoys spending time with his family and friends, setting goals, working out, biking, listening to music, studying the stock market, and watching various sporting events.
-            </p>
-          </div>
-          <div className="flex flex-col w-full justify-center items-center p-8">
-            <Link href="/ethankey">
-                <Avatar alt="Ethan Key" src="/me.webp" className="scale-150 border" sx={{ width: 150, height: 150,
-                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                  "&:hover": {
-                    transform: "scale(1.6)", // Slightly enlarge on hover
-                    boxShadow: "0px 0px 10px rgba(255, 255, 255, 0.5)", // Glow effect
-                  },
-                 }}/>
-            </Link>
-            <h2 className="text-3xl font-semibold pt-14">Ethan Key</h2>
-          </div>
-        </div>
-
-        <div className="flex flex-row items-center justify-between px-16 py-10 mt-20 border-b border-t border-[#ffffff]">
-          {/* Bryce Key */}
-          <div className="flex flex-col w-full justify-center items-center p-8">
-            <Avatar alt="Bryce Key" src="/bryce2.webp" className="scale-150 border" sx={{ width: 150, height: 150 }}/>
-            <h2 className="text-3xl font-semibold pt-14">Bryce Key</h2>
-          </div>
-          <div className="ml-16 px-44">
-            <p className="text-center pb-10">
-              Bryce is currently a freshman at Columbia University, where he studies Biochemistry and competes on the Swimming and Diving team. Bryce graduated his high school, The Oakridge School, as the Valedictorian of his class. He is an outstanding scholar, earning a 4.96 weighted GPA in high school, scoring a 35 on the ACT, and currently maintaining a 4.0 GPA at Columbia. In his free time, Bryce likes to hang out with friends, read, crochet, sing, and design fashion. 
-            </p>
-          </div>
-        </div>
+        <div className="flex flex-1 justify-center">{renderContent()}</div>
       </div>
 
-      {/* Animated Images Section */}
-      <div className="p-10">
-        <PhotoGallery/>
-      </div>
+      <footer className="py-6 flex flex-col items-center gap-4 border-t-2 border-rule">
+        <div className="flex flex-row items-center justify-center gap-8">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <FaLinkedin size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
+          </a>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <FaGithub size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
+          </a>
+          <a href={`mailto:${profile.email}`} aria-label={`Email ${profile.email}`} title={profile.email}>
+            <MdEmail size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
+          </a>
+          {profile.resumeUrl && (
+            <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" aria-label="Résumé (PDF)" title="Résumé">
+              <FaFilePdf size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
+            </a>
+          )}
+        </div>
+        <a href={`mailto:${profile.email}`} className="text-ink hover:underline">{profile.email}</a>
+      </footer>
     </div>
   );
 }

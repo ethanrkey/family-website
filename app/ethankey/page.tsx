@@ -8,15 +8,29 @@ import Education from "@/components/education";
 const Projects = dynamic(() => import('@/components/projects'), { ssr: false });
 import Skills from "@/components/skills";
 import About from "@/components/about";
-import { MdLocalPhone } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
 import dynamic from 'next/dynamic';
+import { profile } from "@/content/profile";
 
+// MUI sx reads the theme's CSS variables so the shell follows data-theme.
+const tabSx = (active: boolean) => ({
+  height: "60px",
+  width: "150px",
+  fontFamily: "inherit",
+  textTransform: "none" as const,
+  backgroundColor: active ? "var(--accent)" : "var(--surface-raised)",
+  color: active ? "var(--accent-ink)" : "var(--ink)",
+  padding: "10px 20px",
+  borderRadius: "12px",
+  "&:hover": {
+    backgroundColor: "var(--accent)",
+    color: "var(--accent-ink)",
+  },
+});
 
 export default function EthanKey() {
   const [activeSection, setActiveSection] = useState("");
-  const [contactClicked, setContactClicked] = useState(false);
 
   const renderContent = () => {
     switch (activeSection) {
@@ -34,132 +48,50 @@ export default function EthanKey() {
   };
 
   return (
-    <div className="bg-[#ffffff] flex flex-col min-h-screen">
-      <header className="bg-[#ffffff] flex flex-col items-center justify-center h-48 border-b-2 border-[#3c4f70]">
+    <div className="bg-surface text-ink flex flex-col min-h-screen">
+      <header className="flex flex-col items-center justify-center h-48 border-b-2 border-rule">
         <Link href="/">
-          <h1 className="text-6xl text-[#3c4f70] font-bold">Ethan Key</h1>
+          <h1 className="text-6xl text-ink font-bold">{profile.name}</h1>
         </Link>
       </header>
       <div className="flex flex-1">
         <div className="flex justify-center w-1/5 py-16">
           <Stack spacing={3} direction="column">
-            <Button
-              onClick={() => setActiveSection("Experience")}
-              variant="contained"
-              sx={{
-                height: "60px", 
-                width: '150px',
-                fontFamily: "inherit",
-                textTransform: "none",
-                backgroundColor: activeSection === "Experience" ? "#B36D6D" : "#a6a6a6",
-                color: "white",
-                padding: '10px 20px',
-                borderRadius: '12px',
-                '&:hover': {
-                  backgroundColor: '#B36D6D',
-                },
-              }}
-            >
+            <Button onClick={() => setActiveSection("Experience")} variant="contained" sx={tabSx(activeSection === "Experience")}>
               Experience
             </Button>
-            <Button
-              onClick={() => setActiveSection("Education")}
-              variant="contained"
-              sx={{
-                height: "60px", 
-                width: '150px',
-                fontFamily: "inherit",
-                textTransform: "none",
-                backgroundColor: activeSection === "Education" ? "#B36D6D" : "#a6a6a6",
-                color: 'white',
-                padding: '10px 20px',
-                borderRadius: '12px',
-                '&:hover': {
-                  backgroundColor: '#B36D6D',
-                },
-              }}
-            >
+            <Button onClick={() => setActiveSection("Education")} variant="contained" sx={tabSx(activeSection === "Education")}>
               Education
             </Button>
-            <Button
-              onClick={() => setActiveSection("Projects")}
-              variant="contained"
-              sx={{
-                height: "60px", 
-                width: '150px',
-                fontFamily: "inherit",
-                textTransform: "none",
-                backgroundColor: activeSection === "Projects" ? "#B36D6D" : "#a6a6a6",
-                color: 'white',
-                padding: '10px 20px',
-                borderRadius: '12px',
-                '&:hover': {
-                  backgroundColor: '#B36D6D',
-                },
-              }}
-            >
+            <Button onClick={() => setActiveSection("Projects")} variant="contained" sx={tabSx(activeSection === "Projects")}>
               Projects
             </Button>
-            <Button
-              onClick={() => setActiveSection("Skills")}
-              variant="contained"
-              sx={{
-                height: "60px", 
-                width: '150px',
-                fontFamily: "inherit",
-                textTransform: "none",
-                backgroundColor: activeSection === "Skills" ? "#B36D6D" : "#a6a6a6",
-                color: 'white',
-                padding: '10px 20px',
-                borderRadius: '12px',
-                '&:hover': {
-                  backgroundColor: '#B36D6D',
-                },
-              }}
-            >
+            <Button onClick={() => setActiveSection("Skills")} variant="contained" sx={tabSx(activeSection === "Skills")}>
               Skills
             </Button>
           </Stack>
         </div>
         <div className="flex flex-1 justify-center">{renderContent()}</div>
       </div>
-      
-      <footer className="bg-[#ffffff] pt-4 flex flex-col border-t-2 border-[#3c4f70]">
-        <div className="flex items-center justify-center">
-          {contactClicked ? (<a href="https://www.linkedin.com/in/ethan-key/" target="_blank">
-            <FaLinkedin size={36} className="fill-[#0f74d9] drop-shadow-2xl transition-transform duration-300 ease-in-out transform hover:scale-150"/>
+
+      <footer className="py-6 flex flex-col items-center gap-4 border-t-2 border-rule">
+        <div className="flex flex-row items-center justify-center gap-8">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <FaLinkedin size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
           </a>
-          ) : (
-            <FaLinkedin size={36} className="fill-[#6B7280]"/>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <FaGithub size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
+          </a>
+          <a href={`mailto:${profile.email}`} aria-label={`Email ${profile.email}`} title={profile.email}>
+            <MdEmail size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
+          </a>
+          {profile.resumeUrl && (
+            <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" aria-label="Résumé (PDF)" title="Résumé">
+              <FaFilePdf size={36} className="fill-ink-muted hover:fill-accent transition-transform duration-300 ease-in-out hover:scale-125"/>
+            </a>
           )}
         </div>
-        <div className="flex flex-row items-center justify-center py-3 space-x-5">
-          <div>
-            <p className={contactClicked ? "block text-[#3c4f70]" : "hidden"}>+1 (817) 287-8935</p>
-          </div>
-          <div className="flex flex-row gap-2">
-            <MdLocalPhone size={36} className={contactClicked ? "fill-[#8ccc8b]" : "fill-[#6B7280]"}/>
-            <Button 
-              variant="text"
-              onClick={() => setContactClicked((prev) => !prev)}
-              sx={{
-                color: '#3c4f70',
-                fontFamily: "inherit",
-                textTransform: "none",
-                fontWeight: "bold",
-                '&:hover': {
-                    backgroundColor: '#b5cef5',
-                  },
-              }}
-            >
-                Contact Me
-            </Button>
-            <MdEmail size={36} className={contactClicked ? "fill-[#8ebdb5]" : "fill-[#6B7280]"}/>
-          </div>
-          <div>
-            <p className={contactClicked ? "block text-[#3c4f70]" : "hidden"}>ethankey@bu.edu</p>
-          </div>
-        </div>
+        <a href={`mailto:${profile.email}`} className="text-ink hover:underline">{profile.email}</a>
       </footer>
     </div>
   );

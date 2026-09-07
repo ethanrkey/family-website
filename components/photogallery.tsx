@@ -5,70 +5,43 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import { galleryTop, galleryBottom } from "@/content/family";
+import type { FamilyPhoto } from "@/content/types";
 
-const topPhotos = [
-    { src: "/family1.webp", width: 600, height: 800 },
-    { src: "/family3.webp", width: 1000, height: 800 },
-    { src: "/family4.webp", width: 600, height: 800 },
-    { src: "/family5.webp", width: 500, height: 800 },
-];
+const SLIDES_PER_VIEW = 3;
 
-const bottomPhotos = [
-    { src: "/family6.webp", width: 1000, height: 800 },
-    { src: "/family7.webp", width: 600, height: 800 },
-    { src: "/family9.webp", width: 600, height: 800 },
-    { src: "/family8.webp", width: 600, height: 800 },
-    { src: "/family10.webp", width: 600, height: 800 },
-];
+function Row({ photos, reverse }: { photos: FamilyPhoto[]; reverse?: boolean }) {
+  return (
+    <Swiper
+      slidesPerView={SLIDES_PER_VIEW}
+      spaceBetween={30}
+      loop={true}
+      autoplay={{ delay: 3000, disableOnInteraction: false, reverseDirection: reverse }}
+      modules={[Autoplay]}
+      className="w-full"
+    >
+      {photos.map((image) => (
+        <SwiperSlide key={image.src}>
+          <div className="relative w-full overflow-hidden aspect-[4/3]">
+            <Image
+              src={image.src}
+              fill
+              sizes={`${Math.round(100 / SLIDES_PER_VIEW)}vw`}
+              alt={image.alt}
+              className="rounded-md object-cover"
+            />
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+}
 
 export default function AutoSlidingGallery() {
   return (
     <div className="flex flex-col gap-6 w-full">
-      {/* Top Row (scrolling left) */}
-      <Swiper
-        slidesPerView={3} // Show 3 images at a time
-        spaceBetween={30} // Space between images
-        loop={true} // Infinite looping
-        autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto-slide every 3 sec
-        modules={[Autoplay]}
-        className="w-full"
-      >
-        {topPhotos.map((image, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full" style={{ aspectRatio: "4 / 3", overflow: "hidden" }}>
-              <Image
-                src={image.src}
-                fill
-                alt="Top Image"
-                className="rounded-md object-cover"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      {/* Bottom Row (scrolling right) */}
-      <Swiper
-        slidesPerView={3} // Show 3 images at a time
-        spaceBetween={30}
-        loop={true}
-        autoplay={{ delay: 3000, disableOnInteraction: false, reverseDirection: true }} // Reverse for bottom row
-        modules={[Autoplay]}
-        className="w-full"
-      >
-        {bottomPhotos.map((image, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full" style={{ aspectRatio: "4 / 3", overflow: "hidden" }}>
-              <Image
-                src={image.src}
-                fill
-                alt="Bottom Image"
-                className="rounded-md object-cover"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <Row photos={galleryTop} />
+      <Row photos={galleryBottom} reverse />
     </div>
   );
 }
